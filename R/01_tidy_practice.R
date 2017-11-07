@@ -189,30 +189,16 @@ names(results) <- new_names_2
 
 # option 2: create character vector for renaming using "stringr"
 new_names_2 <-results %>%
-  colnames() %>%
-  stringr::str_replace_all(pattern = "Please rate this food: ", replacement = "") %>%
-  stringr::str_replace_all(pattern = "What is the name of your", replacement = "") %>%
-  stringr::str_replace_all(pattern = "What is your", replacement = "") %>%
-  stringr::str_replace_all(pattern = "\\?", replacement = "") %>%
-  stringr::str_trim() %>%
-  stringr::str_replace_all(pattern = " ", replacement = "_") %>%
-  stringr::str_replace_all(pattern = "-", replacement = "_") %>%
-  stringr::str_to_lower()
 
-# change character vector one at a time
+
+# option 2a: change character vector one at a time
 new_names_2[5] <- "r_skill"
-new_names_2[6] <- "ds_skill"
-new_names_2[7] <- "ds_topics"
-new_names_2[8] <- "models"
-new_names_2[9] <- "packages"
-new_names_2[12] <- "star_rank"
-new_names_2[25] <- "gender"
 
 # assign column names to data frame
 names(results) <- new_names_2
 
 
-# proxy for number of expanding variables
+# extract information from multipe choice answers
 results <- results %>%
   mutate(num_models = stringr::str_count(models, pattern = ";")  +1 ,
          num_packages = stringr::str_count(packages, pattern = ";") + 1,
@@ -230,18 +216,13 @@ results  <-  results %>%
   mutate(num_ds_skill = stringr::str_count(ds_skill_desc, pattern = ";") + 1,
          num_r_skill = stringr::str_count(r_skill_desc, pattern = ";") + 1)
 
+# look at documenation for separate, into argument
 results_tidy <- results %>%
   separate(col = packages, into = paste0("package_",1:results$num_packages), sep = ";") %>% # package names as columns
-  separate(col = models, into = paste0("model_",1:results$num_models), sep = ";") %>% # model names as columns
-  separate(col = ds_skill_desc, into = paste0("ds_skill_",1:results$num_skills), sep = ";") %>%  # ds description as column
-  separate(col = ds_topics, into = paste0("ds_topic_",1:results$num_topics), sep = ";") %>%  # ds topic as column
-  separate(col = r_skill_desc, into = paste0("r_skill_",1:results$num_r_skill), sep = ";")  %>% # r skills as column
-  # select(-c(start_time:name,r_skill, ds_skill, num_models:num_topics, num_ds_skill, num_r_skill)) %>%
+   %>% # model names as columnss
+   %>%  # ds description as columns
+   %>%  # ds topic as columns
+   %>% # r skills as columns
+  # some other stuff
   gather(key = variable, value = value, -c(start_date_at_slalom, start_date_at_zendesk, hometown, favorite_us_city, favorite_non_us_city))
-
-
-
-# save the tid(ier) data ------------------------------------------------------
-save(results_tidy, file = "data/results_tidy.rda")
-save(results, file = "data/results_renamed.rds")
 

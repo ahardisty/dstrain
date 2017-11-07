@@ -1,6 +1,6 @@
 ## 02-Visualization.R
 # install.packages("ggplot2", "hexbin")
-library(ggplot2)
+library(tidyverse)
 # library(hexbin)
 
 plot(iris$Sepal.Width, iris$Sepal.Length)
@@ -12,16 +12,9 @@ qplot(Sepal.Width, Sepal.Length, data = iris, color = Species, shape = Species, 
 
 
 # Diving in: Scatterplots
-
-install.packages("ggplot2")
-library(ggplot2)
-?mpg
-View(mpg)
-
 qplot(displ, hwy, data = mpg)
 
 # Aesthetics
-
 qplot(displ, hwy, data = mpg, color = class)
 qplot(displ, hwy, data = mpg, size = class)
 qplot(displ, hwy, data = mpg, shape = class)
@@ -44,17 +37,17 @@ qplot(displ, hwy, data = mpg, geom = "point")
 qplot(displ, hwy, data = mpg, geom = c("point", "smooth"))
 
 # Your Turn
-# QPLOT ---------------------------------------------
-# qplot of mpg
-# qplot of mpg with boxplot geom
+# ---------------------------------------------
+qplot(class, hwy, data = mpg)
+qplot(class, hwy, data = mpg, geom = "boxplot")
 # ---------------------------------------------
 
 qplot(class, hwy, data = mpg, geom = "boxplot")
 qplot(reorder(class, hwy), hwy, data = mpg, geom = "boxplot")
 
 # Your Turn
-# REORDER ---------------------------------------------
-# visualize median hwy mileage, reorder by mileage
+# ---------------------------------------------
+qplot(reorder(class, hwy, FUN = median), hwy, data = mpg, geom = "boxplot")
 # ---------------------------------------------
 
 # Diamonds
@@ -62,8 +55,10 @@ qplot(reorder(class, hwy), hwy, data = mpg, geom = "boxplot")
 # Bar charts
 
 # Your Turn
-# QPLOT DIAMONDS DATA --------------------------
-# MAKE THHREE QPLOTS ON DIAMONDS DATA
+# --------------------------
+qplot(x, z, data = diamonds)
+qplot(x, data  = diamonds)
+qplot(cut, data = diamonds)
 # --------------------------
 
 qplot(cut, data = diamonds, geom = "bar", color = cut)
@@ -72,8 +67,8 @@ qplot(cut, data = diamonds, geom = "bar", fill = cut)
 # Position Adjustments
 
 # Your Turn
-# ADJUSTMENTS --------------------------
-# MAKE THHREE QPLOTS ON DIAMONDS DATA USING COLOR OR FILL
+# --------------------------
+qplot(color, data = diamonds, geom = "bar", fill = cut)
 # --------------------------
 
 qplot(color, data = diamonds, fill = cut, position = "stack")
@@ -162,6 +157,7 @@ qplot(carat, price, data = diamonds, size = I(0.5))
 qplot(carat, price, data = diamonds, alpha = I(0.1))
 qplot(carat, price, data = diamonds, size = I(0.5), alpha = I(0.1))
 
+
 # plot the ds_skill_level -------------------------------------------------
 # create a specific data frame
 ds_skill_level <- results_tidy %>%
@@ -236,22 +232,6 @@ ggplot(food_rank)+
   # boxplot with colors
   ggplot(food_rank) +
 
-
-
-
-  # Saving graphs
-
-  # Your Turn
-  # ---------------
-getwd()
-# ---------------
-
-getwd()
-dir()
-
-ggsave("my-plot.pdf")
-ggsave("my-plot.png")
-ggsave("my-plot.pdf", width = 6, height = 6)
 
 
 

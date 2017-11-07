@@ -20,17 +20,29 @@ factorial(round(2.0015) + 1)
 
 # Your Turn
 # ---------
-# add some numbers
+10 + 2
+12 * 3
+36 - 6
+30 / 3
 # ---------
 
 # R objects
-# create a numeric object
-foo <-
 
-# manipulate the numeric object
+foo <- 42
 
-# remove the numeric object
+foo <- round(3.1415) + 1
+foo
+factorial(foo)
 
+foo
+rm(foo)
+foo
+
+pi
+pi <- 1
+pi
+rm(pi)
+pi
 
 # Data structures
 
@@ -118,7 +130,7 @@ class(lst)
 
 list(c(1, 2), TRUE, c("a", "b", "c"))
 
-df <- data.frame(c(1, 2, 3),
+df <- data.frame(c(1, 2, 3), 
  c("R","S","T"), c(TRUE, FALSE, TRUE))
 class(df)
 
@@ -128,13 +140,13 @@ nvec
 nlst <- list(one = 1, two = 2, many = c(3, 4, 5))
 nlst
 
-ndf <- data.frame(numbers = c(1, 2, 3),
-          letters = c("R","S","T"),
+ndf <- data.frame(numbers = c(1, 2, 3), 
+          letters = c("R","S","T"), 
           logic = c(TRUE, FALSE, TRUE))
 ndf
 
 names(ndf)
 names(nvec)
-names(nvec) <- c("uno", "dos", "tres")
+names(nvec) <- c("uno", "dos", "tres") 
 nvec
 

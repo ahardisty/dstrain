@@ -1,4 +1,4 @@
-### 01-Transform.R
+### 02-Transform.R
 # library(dplyr)
 # library(ggplot2)
 # library(reshape)
@@ -15,10 +15,8 @@ tail(bnames)
 
 # Your Turn
 # ----------------------------------------------
-# create a data frame with only your name
-
-# plot your name over time
-
+garrett <- bnames[bnames$name == "Garrett", ]
+qplot(year, prop, data = garrett, geom = "line")
 # ----------------------------------------------
 
 michael <- bnames[bnames$name == "Michael", ]
@@ -27,21 +25,10 @@ qplot(year, prop, data = michael, geom = "point")
 qplot(year, prop, data = michael, geom = "line",
   color = sex)
 
-michaels <- bnames[bnames$name == "Michael" |
+michaels <- bnames[bnames$name == "Michael" | 
                    bnames$name == "Michelle", ]
 qplot(year, prop, data = michaels, geom = "line",
   color = interaction(sex, name))
-
-
-# Your Turn
-# ----------------------------------------------
-# create a data frame with analyst names
-
-# plot over time
-
-# ----------------------------------------------
-
-
 
 ## dplyr
 
@@ -63,42 +50,32 @@ filter(tbl, color == "blue")
 filter(df, value %in% c(1, 4))
 
 # Your Turn
-# FILTER --------------------------------
-# use dplyr verbs to create a dataframe with your name
-
-# use dplyr to limit years from 1900 to 2000
-
-
-# what are the dimensions
-
-# SELECT --------------------------------
+# --------------------------------
+garrett <- filter(bnames, name == "Garrett")
+garrett$soundex[1]
+filter(bnames, soundex == "G630")
+filter(bnames, sex == "girl" & (year == 1900 | year == 2000))
+dim(filter(bnames, year > 2000 & prop > 0.01))
+# --------------------------------
 
 select(tbl, color)
 select(df, -color)
 
 # Your Turn
 # --------------------------------
-# use select helpers (below)
-?dplyr::select_helpers
-#select only soundex column by name
-#select soundex column by starts_with
-#select soundex column by ends_with
-
-
-# ARRANGE --------------------------------
+select(bnames, soundex)
+select(bnames, starts_with("sound"))
+select(bnames, ends_with("ex"))
+# --------------------------------
 
 arrange(tbl, color)
 arrange(tbl, desc(color))
 
 # Your Turn
 # --------------------------------
-
-# arrange bnames descending prop
-
-# arrange your name dataframe descending prop
-
-
-# MUTATE AND SUMMARISE--------------------------------
+arrange(bnames, desc(prop)) # John in 1880
+arrange(garrett, desc(prop)) # 2000
+# --------------------------------
 
 mutate(tbl, double = 2 * value)
 mutate(tbl, double = 2 * value, quadruple = 2 * double)
@@ -108,22 +85,26 @@ summarise(tbl, total = sum(value), avg = mean(value))
 
 # Your Turn
 # --------------------------------
- #create a new column called perc (prop * 100) in bnames
-# create three summary variablss min(prop), mean(prop), max(prop) in bnames
+mutate(garrett, perc = prop * 100)
+summarise(garrett, 
+  min = min(prop),
+  mean = mean(prop),
+  max = max(prop))
+# --------------------------------
 
+## Joining data sets
 
-# Joining data sets--------------------------------
+births
 
 head(bnames)
 head(births)
 
 x <- data.frame(
-  name = c("John", "Paul", "George", "Ringo", "Stuart", "Pete"),
-  instrument = c("guitar", "bass", "guitar", "drums", "bass",
+  name = c("John", "Paul", "George", "Ringo", "Stuart", "Pete"), 
+  instrument = c("guitar", "bass", "guitar", "drums", "bass", 
      "drums"))
-
 y <- data.frame(
-  name = c("John", "Paul", "George", "Ringo", "Brian"),
+  name = c("John", "Paul", "George", "Ringo", "Brian"), 
   band = c("TRUE", "TRUE", "TRUE",  "TRUE", "FALSE"))
 
 left_join(x, y, by = "name")
@@ -133,12 +114,16 @@ anti_join(x, y, by = "name")
 
 # Your Turn
 # ----------------------------------------------------
-bnames2 <-
-  #join bnames and births by year and sex
+bnames2 <- left_join(bnames, births, by = c("year", "sex"))
+bnames2 <- mutate(bnames2, n = prop * births)
+bnames2
+bnames2 <- mutate(bnames2, n = round(prop * births))
+bnames2
+# ----------------------------------------------------
 
-# create new variable n (prop * births; consider round() function)
+bnames2
 
-# Groupwise operations ----------------------------------------------------
+# Groupwise operations
 
 # Your Turn
 # ----------------------------------------------------
@@ -147,6 +132,7 @@ sum(garrett$n)
 summarise(garrett, total = sum(n))
 # ----------------------------------------------------
 
+summarise(by_name, total = sum(n))
 
 ## group_by
 
@@ -156,7 +142,7 @@ summarise(by_color, total = sum(value))
 
 group_by(bnames2, name)
 by_name <- group_by(bnames2, name)
-totals <- summarise(by_name, total = sum(n))
+totals <- summarise(by_name, total = sum(n)) 
 totals
 
 group_by(bnames2, name, sex)
@@ -164,17 +150,18 @@ by_name <- group_by(bnames2, name)
 group_by(by_name, sex)
 
 name_sex <- group_by(bnames2, name, sex)
-totals2 <- summarise(name_sex, total = sum(n))
+totals2 <- summarise(name_sex, total = sum(n)) 
 totals2
 
 by_name_sex <- group_by(bnames2, name, sex)
 ungroup(by_name_sex)
 
-# WINDOW FUNCTIONS ------------------------------------------------------------
+# Your Turn
+# ------------------------------------------------------------
 by_soundex <- group_by(bnames2, soundex)
-stotals <- summarise(by_soundex, total = sum(n))
+stotals <- summarise(by_soundex, total = sum(n)) 
 stotals
-arrange(stotals, desc(total))
+arrange(stotals, desc(total)) 
 j500 <- filter(bnames, soundex == "J500")
 unique(j500$name)
 
@@ -184,15 +171,15 @@ ytotals
 qplot(year, total, data = ytotals, geom = "line", color = sex)
 
 year_sex <- group_by(bnames2, year, sex)
-ranks <- mutate(year_sex, rank = rank(desc(prop)))
+ranks <- mutate(year_sex, rank = rank(desc(prop))
 ranks
 garrett <- filter(ranks, name == "Garrett")
 qplot(year, -rank, data = garrett, geom = "line")
 ones <- filter(ranks, rank == 1)
 ones <- select(ones, year, name, gender)
 ones
-
-
+library(reshape2)
+dcast(ones, year ~ sex, value = “name”)
 # ------------------------------------------------------------
 
 name_sex <- group_by(bnames2, name, sex)
