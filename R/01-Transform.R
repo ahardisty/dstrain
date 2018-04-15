@@ -12,11 +12,13 @@ births <- read.csv("data/births.csv")
 
 head(bnames)
 tail(bnames)
+getwd()
 
 # Your Turn
 # ----------------------------------------------
 # create a data frame with only your name
-
+Sarah <- bnames[bnames$name == 'Sarah', ]
+qplot(year, prop, data = Sarah, geom = 'line')
 # plot your name over time
 
 # ----------------------------------------------
@@ -36,6 +38,9 @@ qplot(year, prop, data = michaels, geom = "line",
 # Your Turn
 # ----------------------------------------------
 # create a data frame with analyst names
+all_folks <- bnames[bnames$name%in% c('Aaron', 'Kathy'),]
+qplot(year, prop, data = all_folks, geom = "line",
+      color = interaction(sex, name))
 
 # plot over time
 
@@ -65,7 +70,7 @@ filter(df, value %in% c(1, 4))
 # Your Turn
 # FILTER --------------------------------
 # use dplyr verbs to create a dataframe with your name
-
+filter(bnames, name == 'names')
 # use dplyr to limit years from 1900 to 2000
 
 

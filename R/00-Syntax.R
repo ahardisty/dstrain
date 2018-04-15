@@ -82,10 +82,17 @@ df$birth
 
 # Your turn
 # --------------------------
-# first six rows of diamonds
+diamonds
+library(tidyverse)
+library(tidyverse)
 # nrow of diamonds
+diamonds[1:6]
+diamonds[c(1:6)]
 # summary of diamonds
-
+nrow(diamonds)
+str(diamonds)
+dim(diamonds)
+summary(diamonds)
 # --------------------------
 
 head(diamonds)
@@ -166,13 +173,14 @@ all(z %in% c("Monday", "Tuesday", "Wednesday",
 # Logical subsetting
 
 x_zeroes <- diamonds$x == 0
+class(x_zeroes)
 diamonds[x_zeroes, ]
 
 # Your Turn
 # create a dataframe from diamonds where x and y are equal ------------------------------------
 
 # create logical vector
-
+x_and_y <- diamonds$x == diamonds$y
 
 # subset using logical vectora
 
