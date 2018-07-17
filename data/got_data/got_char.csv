@@ -1,0 +1,31 @@
+id,name,culture,gender,born,alive
+1022,Theon Greyjoy,Ironborn,Male,"In 278 AC or 279 AC, at Pyke",TRUE
+1052,Tyrion Lannister,,Male,"In 273 AC, at Casterly Rock",TRUE
+1074,Victarion Greyjoy,Ironborn,Male,"In 268 AC or before, at Pyke",TRUE
+1109,Will,,Male,,FALSE
+1166,Areo Hotah,Norvoshi,Male,"In 257 AC or before, at Norvos",TRUE
+1267,Chett,,Male,At Hag's Mire,FALSE
+1295,Cressen,,Male,In 219 AC or 220 AC,FALSE
+130,Arianne Martell,Dornish,Female,"In 276 AC, at Sunspear",TRUE
+1303,Daenerys Targaryen,Valyrian,Female,"In 284 AC, at Dragonstone",TRUE
+1319,Davos Seaworth,Westeros,Male,"In 260 AC or before, at King's Landing",TRUE
+148,Arya Stark,Northmen,Female,"In 289 AC, at Winterfell",TRUE
+149,Arys Oakheart,Reach,Male,At Old Oak,FALSE
+150,Asha Greyjoy,Ironborn,Female,"In 275 AC or 276 AC, at Pyke",TRUE
+168,Barristan Selmy,Westeros,Male,In 237 AC,TRUE
+2066,Varamyr,Free Folk,Male,At a village Beyond the Wall,FALSE
+208,Brandon Stark,Northmen,Male,"In 290 AC, at Winterfell",TRUE
+216,Brienne of Tarth,,Female,In 280 AC,TRUE
+232,Catelyn Stark,Rivermen,Female,"In 264 AC, at Riverrun",FALSE
+238,Cersei Lannister,Westerman,Female,"In 266 AC, at Casterly Rock",TRUE
+339,Eddard Stark,Northmen,Male,"In 263 AC, at Winterfell",FALSE
+529,Jaime Lannister,Westerlands,Male,"In 266 AC, at Casterly Rock",TRUE
+576,Jon Connington,Stormlands,Male,In or between 263 AC and 265 AC,TRUE
+583,Jon Snow,Northmen,Male,In 283 AC,TRUE
+60,Aeron Greyjoy,Ironborn,Male,"In or between 269 AC and 273 AC, at Pyke",TRUE
+605,Kevan Lannister,,Male,In 244 AC,FALSE
+743,Melisandre,Asshai,Female,At Unknown,TRUE
+751,Merrett Frey,Rivermen,Male,In 262 AC,FALSE
+844,Quentyn Martell,Dornish,Male,"In 281 AC, at Sunspear, Dorne",FALSE
+954,Samwell Tarly,Andal,Male,"In 283 AC, at Horn Hill",TRUE
+957,Sansa Stark,Northmen,Female,"In 286 AC, at Winterfell",TRUE
