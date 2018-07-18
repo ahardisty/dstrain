@@ -4,33 +4,37 @@ data sourced from repurrrsive package and wrangled with R studio
 got_aliases:
 (one::many, has missing values)
 id    alias
-sample question: which character has the most aliases?
+ANALYST sample question: which character has the most aliases?
+CONSULTANT sample question: what is the name of the character with the most aliases?
 
 
 got_books:
 id    book
 (one::many, no missing values)
-sample question: which character appears in the most books?
+ANALYST sample question: which character appears in the most books?
 
 got_char:
 id    name    culture    gender    born    alive
 (one::one, has missing values)
-sample question: how many characters are alive?
-sample question: what is the gender distribution of characters?
+ANALYST sample question: how many characters are alive?
+ANALYST sample question: what is the gender distribution of characters?
 
 got_house:
 (one::many, missing values = "NA")
 id    house
-sample question: what house has the most members?
-sample question: what character belongs to more than one house?
-sample question: which character belongs to the most houses?
+ANALYST sample question: what house has the most members?
+ANALYST sample question: what character belongs to more than one house?
+ANALYST sample question: which character belongs to the most houses?
 
 got_series:
 (one::many, has missing values)
 id    season
-sample question: which character appears in the most seasons?
+ANALYST sample question: which character appears in the most seasons?
 
 got_titles (official character titles):
 (one::many, has missing values)
 id    title
-sample question: which character has the most titles?
+
+ANALYST sample question: which character has the most titles?
+CONSULTANT sample question: which character would you pick as an ally?
+CONSULTANT sample question: which character would you pick as an enemy?
