@@ -30,6 +30,10 @@ got_series:
 (one::many, has missing values)
 id    season
 ANALYST sample question: which character appears in the most seasons?
+CONSULTANT sample question: which characters appear in TV series and NOT in books?
+CONSULTANT sample question: which characters appear in books and NOT in tv series?
+CONSULTANT sample question: which characters appear in the same number of books and tv series seasons?
+
 
 got_titles (official character titles):
 (one::many, has missing values)
