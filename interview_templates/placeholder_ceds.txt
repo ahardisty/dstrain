@@ -1,0 +1,62 @@
+CEDS placeholder
+
+Positive:
+	•	Insert
+
+Needs further investigation:
+	•	ipsum
+
+Recommendation:
+	•	ipsum
+
+Major / Minor:
+	•	ipsum
+
+Questions:
+What interests you about Slalom?
+	•	ipsum
+
+What are you most proud of on your resume?
+	•	Ipsum
+
+What was your specific role in that?
+	•	lorum
+
+Tell me about your work at A
+	•	ipsum
+
+What is [first thing on resume for A]?
+	•	ipsum
+
+What brought you from A to B?
+	•	ipsum
+
+How did you go from A from B?
+	•	ipsum
+
+Why did you leave A?
+	•	ipsum
+
+How would you apply what you learned at A and B to another client in same industries?
+	•	ipsum
+
+How much of your data science time is modeling and how much is not modeling (data wrangling, ETL, data engineering)
+	•	ipsum
+
+What type of machine learning, data visualizations, advanced data analytics and building complex statistical models did you apply at [job / role]?
+	•	ipsum
+
+What are you most proud of that is NOT on your resume
+	•	lorem
+
+If you had six months and a million dollars, what problems would you solve with data?
+	•	ipsum
+
+Anything that I didn’t ask that you hoped I would?
+	•	ipsum
+
+Any questions for me?
+	•	ipsum
+
+Notes:
+	•	ipsum
