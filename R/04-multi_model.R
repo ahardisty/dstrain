@@ -12,7 +12,8 @@ data("gapminder")
 # library(ggplot2)
 # devtools::install_github('hadley/modelr')
 # install.packages('purrr')
-
+install.packages("datapasta")
+library
 gapminder %>%
   ggplot(aes(year, lifeExp, group = country)) +
   geom_line(alpha = 1/3)
