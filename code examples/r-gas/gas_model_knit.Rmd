@@ -1,0 +1,39 @@
+---
+title: "Gas Modeling"
+author: "Aaron Hardisty"
+date: "June 23, 2016"
+output: html_document
+---
+
+```{r cache=FALSE, echo=FALSE}
+library(ggplot2)
+knitr::read_chunk('gas_eda.R')
+knitr::read_chunk('gas_model.R')
+```
+
+
+### Finding temperature trends for modeling on training set
+Training set is usage and temperature data December 2013 for the W climate zone code.
+
+```{r hourly_trends, echo=FALSE}
+## comparing temperature in winter months in 2013 and 2014
+```
+
+6am and 6pm are likely times when the majority of customers are home and will heat their homes in the winter.
+
+We will use these two times of the day to test alternative modeling specifications.
+
+### Prediction power of Hourly vs. Daily Temperature
+
+```{r model_summary, echo=FALSE, warning=FALSE}
+
+```
+
+```{r model_comparison, fig.height=3.5, fig.width=3.5, echo=FALSE, warning=FALSE}
+
+```
+
+We used the training set of 2013 to compare the prediction power of hourly temperature (e.g., 6am and 6pm) to daily temperature for the prediction same day.
+On visual inspection the predictions and residuals from both models are identical.
+Differences between R2 values are negligible and as a result we will prefer the daily temperature for gas usage predictions since it is a simpler model.
+
