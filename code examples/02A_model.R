@@ -3,7 +3,7 @@
 # saves model objects for looping in next step
 # A IS FOR FLAT FILES
 
-rm(list = ls()) # clear environment 
+rm(list = ls()) # clear environment
 
 source('./Phase_3-3/01_functions.R') # load functions (verify path)
 
@@ -30,7 +30,7 @@ rt_sched_cd <- paste0("'",rt_sched_cd_model,"'") # rt_sched_cd for SQL query
 
 # MySQL
 library(RMySQL)
-ch <- dbConnect(MySQL(),
+ch <- dbConnect(MySQL()),
                 user = 'root',
                 host = 'localhost',
                 dbname = 'RDA_P_REVR')
@@ -44,20 +44,20 @@ dbGetInfo(ch)
 
 # Create SQL query to bring Train data into memory ----------------------------------------------------
 
-fitQuery <- stringr::str_replace_all(paste("SELECT 
+fitQuery <- stringr::str_replace_all(paste("SELECT
 a.customer
 , a.tou_cd
 , a.temp_scenario
 , a.X
 , a.Y
-, b.model_id 
-, b.model_id_sm ,", rt_sched_cd ,"AS rt_sched_cd FROM RDA_P_REVR.EUA_TRAIN AS a JOIN 
-( SELECT 
+, b.model_id
+, b.model_id_sm ,", rt_sched_cd ,"AS rt_sched_cd FROM RDA_P_REVR.EUA_TRAIN AS a JOIN
+( SELECT
 customer AS custID
-, model_id 
-, model_id_sm 
-FROM RDA_P_REVR.EUA_COMPLETE )AS b 
-ON a.customer = b.custID 
+, model_id
+, model_id_sm
+FROM RDA_P_REVR.EUA_COMPLETE )AS b
+ON a.customer = b.custID
 WHERE a.Y >0 AND b.model_id =")
 , "[\r\n]" , "")
 
@@ -71,69 +71,69 @@ estimateModel_memory <- function(query = fitQuery, channel = ch, rate_code = rt_
 {
   # start timing
   print("model fit initiated")
-  start_model_time <- proc.time() 
-  
+  start_model_time <- proc.time()
+
   print("reading train data from sql query")
   start_read_time <- proc.time()
   # RODBC sql query to extract train data
   # TRAIN <- dbGetQuery(channel, query)
   # TRAIN <- dbGetQuery(ch, fitQuery_list[[1]])
-  
+
   # MySQL sql query to extract train data
   TRAIN <- dbGetQuery(channel, query)
   # TRAIN <- dbGetQuery(ch, fitQuery_list[[1]])
   read_time <- (proc.time() - start_read_time)[[3]]/60
-  
+
   # nest and fit on train data
   print("nesting data and fitting earth model")
   start_scenario_time <- proc.time()
-  
+
   # nest and fit on train data
   TRAIN <- TRAIN %>%
-    group_by(temp_scenario, customer, tou_cd, model_id ,model_id_sm) %>% 
-    nest(.key = TRAIN) %>% 
+    group_by(temp_scenario, customer, tou_cd, model_id ,model_id_sm) %>%
+    nest(.key = TRAIN) %>%
     mutate(MODEL = map(TRAIN, ~ earth(Y ~ X, data = ., nprune = 3)),
            rt_sched_cd = rate_code,
            model_date = format(Sys.Date(), '%Y-%m-%d'),
-           model_time = Sys.time()) %>% 
+           model_time = Sys.time()) %>%
     select(customer, tou_cd, model_id, model_id_sm, rt_sched_cd, model_date, model_time, MODEL)
   scenario_time <- (proc.time() - start_scenario_time)[[3]]/60
-  
+
   # assign location of saved model elements
   OUT_NAME <- paste('model_id',unique(TRAIN$model_id), sep = '_')
   OUT_FILE <- paste(OUT_NAME,unique(TRAIN$rt_sched_cd),'model.rds',sep='_')
   OUT_PATH <- paste0(DATA_OUT_LOC, '/', OUT_FILE)
-  
+
   # merge with XREF to get full model values and all temp scenarios
   # MODEL <- left_join(MODEL, scenarios, by = c('rt_sched_cd'))
-  
+
   # save model elements for later use with temp scenario
   # saveRDS(MODEL %>% select(customer, tou_cd, rt_sched_cd, temp_scenario, model_date, MODEL), file = OUT_PATH)
-  
+
   # save model elements for later use with no temp scenario
   print("writing model to .RDS flat file")
   start_write_time <- proc.time()
   saveRDS(TRAIN %>% select(customer, tou_cd, rt_sched_cd, model_date, MODEL), file = OUT_PATH)
   write_time <- (proc.time() - start_write_time)[[3]]/60
-  
+
   # create cycle time of model fit
   cycle_time <- (proc.time() - start_model_time)[[3]]/60
-  
+
   # write results of model fit step
   print("writing model time summary")
-  
-  write.table(cbind(TRAIN %>% group_by(model_id, model_date, model_time, rt_sched_cd) %>% 
-                      summarise(number_of_customers = n_distinct(customer)) %>% 
+
+  write.table(cbind(TRAIN %>% group_by(model_id, model_date, model_time, rt_sched_cd) %>%
+                      summarise(number_of_customers = n_distinct(customer)) %>%
                       ungroup(),tibble(model_io_type = 'rds',read_time, scenario_time, write_time, cycle_time))
               , file = 'model_time.csv',sep = ',', append = TRUE, row.names = FALSE, col.names = FALSE)
-  
-  
+
+
   print(paste('Model Fit for model_id group', unique(TRAIN$model_id),'complete in', round(cycle_time),'minute(s); in-sample and out-of-sample predictions can now be made'))
-  
-  return(cbind(TRAIN %>% group_by(model_id, model_date, model_time, rt_sched_cd) %>% 
-                 summarise(number_of_customers = n_distinct(customer)) %>% 
+
+  return(cbind(TRAIN %>% group_by(model_id, model_date, model_time, rt_sched_cd) %>%
+                 summarise(number_of_customers = n_distinct(customer)) %>%
                  ungroup(),tibble(model_io_type = 'rds',read_time, scenario_time, write_time, cycle_time)))
-} 
+}
 
 
 # Command to run estimateModel_memory with summary table ----------------
@@ -150,12 +150,12 @@ walk(.x = fitQuery_list, .f = estimateModel_memory)
 model_output_summary <- fread(paste0(DATA_OUT_LOC,'/','model_time.csv'), header = FALSE,
                               col.names = c('model_group','model_date','model_time'
                                             ,'rt_sched_cd','model_group_size','model_io_type'
-                                            , 'read_time', 'scenario_time', 'write_time', 'cycle_time')) %>% 
+                                            , 'read_time', 'scenario_time', 'write_time', 'cycle_time')) %>%
   data.table::melt.data.table(id.vars = c('rt_sched_cd','model_io_type','model_date','model_group_size'
                                           ,'model_time','model_group'))
 
-model_output_plot <- ggplot(model_output_summary %>% filter(variable != 'cycle_time') %>% 
-                              group_by(model_io_type, model_group_size, variable) %>% 
+model_output_plot <- ggplot(model_output_summary %>% filter(variable != 'cycle_time') %>%
+                              group_by(model_io_type, model_group_size, variable) %>%
                               summarise(value = mean(value))
                             ,aes(x = factor(model_group_size), y = value)) +
   geom_bar(stat = 'identity', aes(fill = variable)) +
@@ -172,7 +172,7 @@ ggsave('model_output_summary.png',model_output_plot, width = 11.5, height = 8)
 
 # Clean up model environment ----------------------------------------------
 
-# disconnect from ODBC 
+# disconnect from ODBC
 
 
 # diconnect from MySQL

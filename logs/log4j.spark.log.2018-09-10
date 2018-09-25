@@ -1,0 +1,753 @@
+18/09/10 18:37:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/09/10 18:37:27 INFO SparkContext: Running Spark version 2.3.0
+18/09/10 18:37:27 INFO SparkContext: Submitted application: sparklyr
+18/09/10 18:37:27 INFO SecurityManager: Changing view acls to: aaronhardisty
+18/09/10 18:37:27 INFO SecurityManager: Changing modify acls to: aaronhardisty
+18/09/10 18:37:27 INFO SecurityManager: Changing view acls groups to: 
+18/09/10 18:37:27 INFO SecurityManager: Changing modify acls groups to: 
+18/09/10 18:37:27 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(aaronhardisty); groups with view permissions: Set(); users  with modify permissions: Set(aaronhardisty); groups with modify permissions: Set()
+18/09/10 18:37:27 INFO Utils: Successfully started service 'sparkDriver' on port 55954.
+18/09/10 18:37:27 INFO SparkEnv: Registering MapOutputTracker
+18/09/10 18:37:27 INFO SparkEnv: Registering BlockManagerMaster
+18/09/10 18:37:27 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/09/10 18:37:27 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/09/10 18:37:28 INFO DiskBlockManager: Created local directory at /private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/blockmgr-652fabbe-5cea-4ceb-9718-015d0bc593b0
+18/09/10 18:37:28 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+18/09/10 18:37:28 INFO SparkEnv: Registering OutputCommitCoordinator
+18/09/10 18:37:28 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/09/10 18:37:28 INFO SparkUI: Bound SparkUI to 127.0.0.1, and started at http://localhost:4040
+18/09/10 18:37:28 INFO SparkContext: Added JAR file:/Users/aaronhardisty/Library/R/3.4/library/sparklyr/java/sparklyr-2.3-2.11.jar at spark://localhost:55954/jars/sparklyr-2.3-2.11.jar with timestamp 1536629848453
+18/09/10 18:37:28 INFO Executor: Starting executor ID driver on host localhost
+18/09/10 18:37:28 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 55956.
+18/09/10 18:37:28 INFO NettyBlockTransferService: Server created on localhost:55956
+18/09/10 18:37:28 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+18/09/10 18:37:28 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, localhost, 55956, None)
+18/09/10 18:37:28 INFO BlockManagerMasterEndpoint: Registering block manager localhost:55956 with 366.3 MB RAM, BlockManagerId(driver, localhost, 55956, None)
+18/09/10 18:37:28 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, localhost, 55956, None)
+18/09/10 18:37:28 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, localhost, 55956, None)
+18/09/10 18:37:29 WARN SparkContext: Using an existing SparkContext; some configuration may not take effect.
+18/09/10 18:37:29 INFO SharedState: loading hive config file: file:/Users/aaronhardisty/spark/spark-2.3.0-bin-hadoop2.7/conf/hive-site.xml
+18/09/10 18:37:29 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/Users/aaronhardisty/Documents/dstrain/spark-warehouse').
+18/09/10 18:37:29 INFO SharedState: Warehouse path is 'file:/Users/aaronhardisty/Documents/dstrain/spark-warehouse'.
+18/09/10 18:37:29 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+18/09/10 18:37:32 INFO CodeGenerator: Code generated in 233.808964 ms
+18/09/10 18:37:32 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 18:37:51 INFO SparkContext: Invoking stop() from shutdown hook
+18/09/10 18:37:51 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+18/09/10 18:37:51 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/09/10 18:37:51 INFO MemoryStore: MemoryStore cleared
+18/09/10 18:37:51 INFO BlockManager: BlockManager stopped
+18/09/10 18:37:51 INFO BlockManagerMaster: BlockManagerMaster stopped
+18/09/10 18:37:51 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/09/10 18:37:51 INFO SparkContext: Successfully stopped SparkContext
+18/09/10 18:37:51 INFO ShutdownHookManager: Shutdown hook called
+18/09/10 18:37:51 INFO ShutdownHookManager: Deleting directory /private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/spark-fa98c3ba-2802-4df7-9d07-bef9231aa807
+18/09/10 18:37:51 INFO ShutdownHookManager: Deleting directory /private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/spark-b49e6849-9126-47b9-bca5-996b53abe78f
+18/09/10 21:04:05 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/09/10 21:04:07 INFO SparkContext: Running Spark version 2.3.0
+18/09/10 21:04:07 INFO SparkContext: Submitted application: sparklyr
+18/09/10 21:04:07 INFO SecurityManager: Changing view acls to: aaronhardisty
+18/09/10 21:04:07 INFO SecurityManager: Changing modify acls to: aaronhardisty
+18/09/10 21:04:07 INFO SecurityManager: Changing view acls groups to: 
+18/09/10 21:04:07 INFO SecurityManager: Changing modify acls groups to: 
+18/09/10 21:04:07 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(aaronhardisty); groups with view permissions: Set(); users  with modify permissions: Set(aaronhardisty); groups with modify permissions: Set()
+18/09/10 21:04:07 INFO Utils: Successfully started service 'sparkDriver' on port 53440.
+18/09/10 21:04:07 INFO SparkEnv: Registering MapOutputTracker
+18/09/10 21:04:07 INFO SparkEnv: Registering BlockManagerMaster
+18/09/10 21:04:07 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/09/10 21:04:07 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/09/10 21:04:07 INFO DiskBlockManager: Created local directory at /private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/blockmgr-0f32a026-902a-4e72-8348-2190b167173a
+18/09/10 21:04:07 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+18/09/10 21:04:07 INFO SparkEnv: Registering OutputCommitCoordinator
+18/09/10 21:04:08 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/09/10 21:04:08 INFO SparkUI: Bound SparkUI to 127.0.0.1, and started at http://localhost:4040
+18/09/10 21:04:08 INFO SparkContext: Added JAR file:/Library/Frameworks/R.framework/Versions/3.5/Resources/library/sparklyr/java/sparklyr-2.3-2.11.jar at spark://localhost:53440/jars/sparklyr-2.3-2.11.jar with timestamp 1536638648484
+18/09/10 21:04:08 INFO Executor: Starting executor ID driver on host localhost
+18/09/10 21:04:08 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 53443.
+18/09/10 21:04:08 INFO NettyBlockTransferService: Server created on localhost:53443
+18/09/10 21:04:08 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+18/09/10 21:04:08 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, localhost, 53443, None)
+18/09/10 21:04:08 INFO BlockManagerMasterEndpoint: Registering block manager localhost:53443 with 366.3 MB RAM, BlockManagerId(driver, localhost, 53443, None)
+18/09/10 21:04:08 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, localhost, 53443, None)
+18/09/10 21:04:08 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, localhost, 53443, None)
+18/09/10 21:04:09 WARN SparkContext: Using an existing SparkContext; some configuration may not take effect.
+18/09/10 21:04:09 INFO SharedState: loading hive config file: file:/Users/aaronhardisty/spark/spark-2.3.0-bin-hadoop2.7/conf/hive-site.xml
+18/09/10 21:04:09 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/Users/aaronhardisty/Documents/dstrain/spark-warehouse/').
+18/09/10 21:04:09 INFO SharedState: Warehouse path is 'file:/Users/aaronhardisty/Documents/dstrain/spark-warehouse/'.
+18/09/10 21:04:11 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+18/09/10 21:04:15 INFO CodeGenerator: Code generated in 332.396431 ms
+18/09/10 21:04:15 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:04:15 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:04:41 INFO SparkContext: Invoking stop() from shutdown hook
+18/09/10 21:04:41 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+18/09/10 21:04:41 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/09/10 21:04:41 INFO MemoryStore: MemoryStore cleared
+18/09/10 21:04:41 INFO BlockManager: BlockManager stopped
+18/09/10 21:04:41 INFO BlockManagerMaster: BlockManagerMaster stopped
+18/09/10 21:04:41 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/09/10 21:04:41 INFO SparkContext: Successfully stopped SparkContext
+18/09/10 21:04:41 INFO ShutdownHookManager: Shutdown hook called
+18/09/10 21:04:41 INFO ShutdownHookManager: Deleting directory /private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/spark-d63fa67d-007c-418b-a53c-371fe9f02e06
+18/09/10 21:04:41 INFO ShutdownHookManager: Deleting directory /private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/spark-89e6a34a-cdd8-476e-b2ca-2c51ccb9a77a
+18/09/10 21:11:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/09/10 21:11:27 INFO SparkContext: Running Spark version 2.3.0
+18/09/10 21:11:27 INFO SparkContext: Submitted application: sparklyr
+18/09/10 21:11:27 INFO SecurityManager: Changing view acls to: aaronhardisty
+18/09/10 21:11:27 INFO SecurityManager: Changing modify acls to: aaronhardisty
+18/09/10 21:11:27 INFO SecurityManager: Changing view acls groups to: 
+18/09/10 21:11:27 INFO SecurityManager: Changing modify acls groups to: 
+18/09/10 21:11:27 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(aaronhardisty); groups with view permissions: Set(); users  with modify permissions: Set(aaronhardisty); groups with modify permissions: Set()
+18/09/10 21:11:27 INFO Utils: Successfully started service 'sparkDriver' on port 53601.
+18/09/10 21:11:27 INFO SparkEnv: Registering MapOutputTracker
+18/09/10 21:11:27 INFO SparkEnv: Registering BlockManagerMaster
+18/09/10 21:11:27 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/09/10 21:11:27 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/09/10 21:11:27 INFO DiskBlockManager: Created local directory at /private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/blockmgr-45678e09-b73b-4e6e-8716-3d465b6b8102
+18/09/10 21:11:27 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+18/09/10 21:11:27 INFO SparkEnv: Registering OutputCommitCoordinator
+18/09/10 21:11:27 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/09/10 21:11:27 INFO SparkUI: Bound SparkUI to 127.0.0.1, and started at http://localhost:4040
+18/09/10 21:11:27 INFO SparkContext: Added JAR file:/Library/Frameworks/R.framework/Versions/3.5/Resources/library/sparklyr/java/sparklyr-2.3-2.11.jar at spark://localhost:53601/jars/sparklyr-2.3-2.11.jar with timestamp 1536639087746
+18/09/10 21:11:27 INFO Executor: Starting executor ID driver on host localhost
+18/09/10 21:11:27 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 53602.
+18/09/10 21:11:27 INFO NettyBlockTransferService: Server created on localhost:53602
+18/09/10 21:11:27 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+18/09/10 21:11:27 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, localhost, 53602, None)
+18/09/10 21:11:27 INFO BlockManagerMasterEndpoint: Registering block manager localhost:53602 with 366.3 MB RAM, BlockManagerId(driver, localhost, 53602, None)
+18/09/10 21:11:27 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, localhost, 53602, None)
+18/09/10 21:11:27 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, localhost, 53602, None)
+18/09/10 21:11:28 WARN SparkContext: Using an existing SparkContext; some configuration may not take effect.
+18/09/10 21:11:28 INFO SharedState: loading hive config file: file:/Users/aaronhardisty/spark/spark-2.3.0-bin-hadoop2.7/conf/hive-site.xml
+18/09/10 21:11:28 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/Users/aaronhardisty/Documents/dstrain/spark-warehouse/').
+18/09/10 21:11:28 INFO SharedState: Warehouse path is 'file:/Users/aaronhardisty/Documents/dstrain/spark-warehouse/'.
+18/09/10 21:11:29 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+18/09/10 21:11:31 INFO CodeGenerator: Code generated in 253.293112 ms
+18/09/10 21:11:31 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:11:42 INFO SparkContext: Invoking stop() from shutdown hook
+18/09/10 21:11:42 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+18/09/10 21:11:42 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/09/10 21:11:42 INFO MemoryStore: MemoryStore cleared
+18/09/10 21:11:42 INFO BlockManager: BlockManager stopped
+18/09/10 21:11:42 INFO BlockManagerMaster: BlockManagerMaster stopped
+18/09/10 21:11:42 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/09/10 21:11:42 INFO SparkContext: Successfully stopped SparkContext
+18/09/10 21:11:42 INFO ShutdownHookManager: Shutdown hook called
+18/09/10 21:11:42 INFO ShutdownHookManager: Deleting directory /private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/spark-17469f56-c65d-4891-a212-210a51c98781
+18/09/10 21:11:42 INFO ShutdownHookManager: Deleting directory /private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/spark-d482dbb1-7261-4877-a3be-81a2fe39949f
+18/09/10 21:22:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/09/10 21:22:31 INFO SparkContext: Running Spark version 2.3.0
+18/09/10 21:22:31 INFO SparkContext: Submitted application: sparklyr
+18/09/10 21:22:31 INFO SecurityManager: Changing view acls to: aaronhardisty
+18/09/10 21:22:31 INFO SecurityManager: Changing modify acls to: aaronhardisty
+18/09/10 21:22:31 INFO SecurityManager: Changing view acls groups to: 
+18/09/10 21:22:31 INFO SecurityManager: Changing modify acls groups to: 
+18/09/10 21:22:31 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(aaronhardisty); groups with view permissions: Set(); users  with modify permissions: Set(aaronhardisty); groups with modify permissions: Set()
+18/09/10 21:22:31 INFO Utils: Successfully started service 'sparkDriver' on port 53853.
+18/09/10 21:22:31 INFO SparkEnv: Registering MapOutputTracker
+18/09/10 21:22:31 INFO SparkEnv: Registering BlockManagerMaster
+18/09/10 21:22:31 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/09/10 21:22:31 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/09/10 21:22:31 INFO DiskBlockManager: Created local directory at /private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/blockmgr-3a87dc97-039a-4bb3-a2ea-e7699fdd0238
+18/09/10 21:22:31 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+18/09/10 21:22:31 INFO SparkEnv: Registering OutputCommitCoordinator
+18/09/10 21:22:32 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/09/10 21:22:32 INFO SparkUI: Bound SparkUI to 127.0.0.1, and started at http://localhost:4040
+18/09/10 21:22:32 INFO SparkContext: Added JAR file:/Library/Frameworks/R.framework/Versions/3.5/Resources/library/sparklyr/java/sparklyr-2.3-2.11.jar at spark://localhost:53853/jars/sparklyr-2.3-2.11.jar with timestamp 1536639752496
+18/09/10 21:22:32 INFO Executor: Starting executor ID driver on host localhost
+18/09/10 21:22:32 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 53856.
+18/09/10 21:22:32 INFO NettyBlockTransferService: Server created on localhost:53856
+18/09/10 21:22:32 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+18/09/10 21:22:32 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, localhost, 53856, None)
+18/09/10 21:22:32 INFO BlockManagerMasterEndpoint: Registering block manager localhost:53856 with 366.3 MB RAM, BlockManagerId(driver, localhost, 53856, None)
+18/09/10 21:22:32 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, localhost, 53856, None)
+18/09/10 21:22:32 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, localhost, 53856, None)
+18/09/10 21:22:33 WARN SparkContext: Using an existing SparkContext; some configuration may not take effect.
+18/09/10 21:22:33 INFO SharedState: loading hive config file: file:/Users/aaronhardisty/spark/spark-2.3.0-bin-hadoop2.7/conf/hive-site.xml
+18/09/10 21:22:33 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/Users/aaronhardisty/Documents/dstrain/spark-warehouse/').
+18/09/10 21:22:33 INFO SharedState: Warehouse path is 'file:/Users/aaronhardisty/Documents/dstrain/spark-warehouse/'.
+18/09/10 21:22:34 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+18/09/10 21:22:38 INFO CodeGenerator: Code generated in 279.468312 ms
+18/09/10 21:22:38 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:23:10 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:23:11 INFO SparkContext: Starting job: collect at utils.scala:43
+18/09/10 21:23:11 INFO DAGScheduler: Got job 0 (collect at utils.scala:43) with 1 output partitions
+18/09/10 21:23:11 INFO DAGScheduler: Final stage: ResultStage 0 (collect at utils.scala:43)
+18/09/10 21:23:11 INFO DAGScheduler: Parents of final stage: List()
+18/09/10 21:23:11 INFO DAGScheduler: Missing parents: List()
+18/09/10 21:23:11 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[4] at map at utils.scala:40), which has no missing parents
+18/09/10 21:23:11 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 5.9 KB, free 366.3 MB)
+18/09/10 21:23:11 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 3.3 KB, free 366.3 MB)
+18/09/10 21:23:11 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:53856 (size: 3.3 KB, free: 366.3 MB)
+18/09/10 21:23:11 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1039
+18/09/10 21:23:11 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[4] at map at utils.scala:40) (first 15 tasks are for partitions Vector(0))
+18/09/10 21:23:11 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks
+18/09/10 21:23:11 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7880 bytes)
+18/09/10 21:23:11 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+18/09/10 21:23:11 INFO Executor: Fetching spark://localhost:53853/jars/sparklyr-2.3-2.11.jar with timestamp 1536639752496
+18/09/10 21:23:12 INFO TransportClientFactory: Successfully created connection to localhost/127.0.0.1:53853 after 32 ms (0 ms spent in bootstraps)
+18/09/10 21:23:12 INFO Utils: Fetching spark://localhost:53853/jars/sparklyr-2.3-2.11.jar to /private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/spark-eb44307d-0e42-4188-9b00-fbecbf7f8e7c/userFiles-a5d05a87-4b0c-47e6-a777-fce0ce912139/fetchFileTemp5621579469774633625.tmp
+18/09/10 21:23:12 INFO Executor: Adding file:/private/var/folders/0y/7wq8w48n70j2xgzhq2m1y3940000gn/T/spark-eb44307d-0e42-4188-9b00-fbecbf7f8e7c/userFiles-a5d05a87-4b0c-47e6-a777-fce0ce912139/sparklyr-2.3-2.11.jar to class loader
+18/09/10 21:23:12 INFO CodeGenerator: Code generated in 15.626414 ms
+18/09/10 21:23:12 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1013 bytes result sent to driver
+18/09/10 21:23:12 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 423 ms on localhost (executor driver) (1/1)
+18/09/10 21:23:12 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+18/09/10 21:23:12 INFO DAGScheduler: ResultStage 0 (collect at utils.scala:43) finished in 0.814 s
+18/09/10 21:23:12 INFO DAGScheduler: Job 0 finished: collect at utils.scala:43, took 0.925616 s
+18/09/10 21:23:17 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:23:17 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 0
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 15
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 2
+18/09/10 21:23:18 INFO BlockManagerInfo: Removed broadcast_0_piece0 on localhost:53856 in memory (size: 3.3 KB, free: 366.3 MB)
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 1
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 3
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 24
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 4
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 6
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 28
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 5
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 12
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 22
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 8
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 17
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 7
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 20
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 21
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 18
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 25
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 10
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 9
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 11
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 19
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 16
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 14
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 13
+18/09/10 21:23:18 INFO ContextCleaner: Cleaned accumulator 23
+18/09/10 21:23:18 INFO CodeGenerator: Code generated in 32.529436 ms
+18/09/10 21:23:18 INFO CodeGenerator: Code generated in 17.074281 ms
+18/09/10 21:23:18 INFO SparkContext: Starting job: sql at NativeMethodAccessorImpl.java:0
+18/09/10 21:23:18 INFO DAGScheduler: Registering RDD 14 (sql at NativeMethodAccessorImpl.java:0)
+18/09/10 21:23:18 INFO DAGScheduler: Got job 1 (sql at NativeMethodAccessorImpl.java:0) with 1 output partitions
+18/09/10 21:23:18 INFO DAGScheduler: Final stage: ResultStage 2 (sql at NativeMethodAccessorImpl.java:0)
+18/09/10 21:23:18 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+18/09/10 21:23:18 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 1)
+18/09/10 21:23:18 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[14] at sql at NativeMethodAccessorImpl.java:0), which has no missing parents
+18/09/10 21:23:18 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 32.3 KB, free 366.3 MB)
+18/09/10 21:23:18 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 12.7 KB, free 366.3 MB)
+18/09/10 21:23:18 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:53856 (size: 12.7 KB, free: 366.3 MB)
+18/09/10 21:23:18 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1039
+18/09/10 21:23:18 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[14] at sql at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+18/09/10 21:23:18 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks
+18/09/10 21:23:18 WARN TaskSetManager: Stage 1 contains a task of very large size (27702 KB). The maximum recommended task size is 100 KB.
+18/09/10 21:23:18 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1, localhost, executor driver, partition 0, PROCESS_LOCAL, 28367204 bytes)
+18/09/10 21:23:18 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+18/09/10 21:23:19 INFO CodeGenerator: Code generated in 43.613842 ms
+18/09/10 21:23:19 INFO CodeGenerator: Code generated in 218.430996 ms
+18/09/10 21:23:23 INFO MemoryStore: Block rdd_9_0 stored as values in memory (estimated size 22.5 MB, free 343.8 MB)
+18/09/10 21:23:23 INFO BlockManagerInfo: Added rdd_9_0 in memory on localhost:53856 (size: 22.5 MB, free: 343.8 MB)
+18/09/10 21:23:23 INFO CodeGenerator: Code generated in 6.428806 ms
+18/09/10 21:23:23 INFO CodeGenerator: Code generated in 27.053007 ms
+18/09/10 21:23:23 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1781 bytes result sent to driver
+18/09/10 21:23:23 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 4892 ms on localhost (executor driver) (1/1)
+18/09/10 21:23:23 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+18/09/10 21:23:23 INFO DAGScheduler: ShuffleMapStage 1 (sql at NativeMethodAccessorImpl.java:0) finished in 4.936 s
+18/09/10 21:23:23 INFO DAGScheduler: looking for newly runnable stages
+18/09/10 21:23:23 INFO DAGScheduler: running: Set()
+18/09/10 21:23:23 INFO DAGScheduler: waiting: Set(ResultStage 2)
+18/09/10 21:23:23 INFO DAGScheduler: failed: Set()
+18/09/10 21:23:23 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[17] at sql at NativeMethodAccessorImpl.java:0), which has no missing parents
+18/09/10 21:23:23 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 7.3 KB, free 343.8 MB)
+18/09/10 21:23:23 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.8 KB, free 343.7 MB)
+18/09/10 21:23:23 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:53856 (size: 3.8 KB, free: 343.8 MB)
+18/09/10 21:23:23 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1039
+18/09/10 21:23:23 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[17] at sql at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+18/09/10 21:23:23 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks
+18/09/10 21:23:23 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2, localhost, executor driver, partition 0, NODE_LOCAL, 7754 bytes)
+18/09/10 21:23:23 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+18/09/10 21:23:23 INFO ShuffleBlockFetcherIterator: Getting 1 non-empty blocks out of 1 blocks
+18/09/10 21:23:23 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 8 ms
+18/09/10 21:23:23 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 1825 bytes result sent to driver
+18/09/10 21:23:23 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 66 ms on localhost (executor driver) (1/1)
+18/09/10 21:23:23 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+18/09/10 21:23:23 INFO DAGScheduler: ResultStage 2 (sql at NativeMethodAccessorImpl.java:0) finished in 0.079 s
+18/09/10 21:23:23 INFO DAGScheduler: Job 1 finished: sql at NativeMethodAccessorImpl.java:0, took 5.044112 s
+18/09/10 21:23:23 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:23:23 INFO CodeGenerator: Code generated in 5.947477 ms
+18/09/10 21:23:23 INFO SparkContext: Starting job: collect at utils.scala:196
+18/09/10 21:23:23 INFO DAGScheduler: Registering RDD 22 (collect at utils.scala:196)
+18/09/10 21:23:23 INFO DAGScheduler: Got job 2 (collect at utils.scala:196) with 1 output partitions
+18/09/10 21:23:23 INFO DAGScheduler: Final stage: ResultStage 4 (collect at utils.scala:196)
+18/09/10 21:23:23 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 3)
+18/09/10 21:23:23 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 3)
+18/09/10 21:23:23 INFO DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[22] at collect at utils.scala:196), which has no missing parents
+18/09/10 21:23:23 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 32.3 KB, free 343.7 MB)
+18/09/10 21:23:23 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 12.7 KB, free 343.7 MB)
+18/09/10 21:23:23 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on localhost:53856 (size: 12.7 KB, free: 343.8 MB)
+18/09/10 21:23:23 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1039
+18/09/10 21:23:23 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[22] at collect at utils.scala:196) (first 15 tasks are for partitions Vector(0))
+18/09/10 21:23:23 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks
+18/09/10 21:23:24 WARN TaskSetManager: Stage 3 contains a task of very large size (27702 KB). The maximum recommended task size is 100 KB.
+18/09/10 21:23:24 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 3, localhost, executor driver, partition 0, PROCESS_LOCAL, 28367204 bytes)
+18/09/10 21:23:24 INFO Executor: Running task 0.0 in stage 3.0 (TID 3)
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 94
+18/09/10 21:23:24 INFO BlockManagerInfo: Removed broadcast_2_piece0 on localhost:53856 in memory (size: 3.8 KB, free: 343.8 MB)
+18/09/10 21:23:24 INFO BlockManager: Found block rdd_9_0 locally
+18/09/10 21:23:24 INFO Executor: Finished task 0.0 in stage 3.0 (TID 3). 1824 bytes result sent to driver
+18/09/10 21:23:24 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 3) in 547 ms on localhost (executor driver) (1/1)
+18/09/10 21:23:24 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+18/09/10 21:23:24 INFO DAGScheduler: ShuffleMapStage 3 (collect at utils.scala:196) finished in 0.563 s
+18/09/10 21:23:24 INFO DAGScheduler: looking for newly runnable stages
+18/09/10 21:23:24 INFO DAGScheduler: running: Set()
+18/09/10 21:23:24 INFO DAGScheduler: waiting: Set(ResultStage 4)
+18/09/10 21:23:24 INFO DAGScheduler: failed: Set()
+18/09/10 21:23:24 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[25] at collect at utils.scala:196), which has no missing parents
+18/09/10 21:23:24 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 7.3 KB, free 343.7 MB)
+18/09/10 21:23:24 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 3.8 KB, free 343.7 MB)
+18/09/10 21:23:24 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on localhost:53856 (size: 3.8 KB, free: 343.8 MB)
+18/09/10 21:23:24 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1039
+18/09/10 21:23:24 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 4 (MapPartitionsRDD[25] at collect at utils.scala:196) (first 15 tasks are for partitions Vector(0))
+18/09/10 21:23:24 INFO TaskSchedulerImpl: Adding task set 4.0 with 1 tasks
+18/09/10 21:23:24 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 4, localhost, executor driver, partition 0, NODE_LOCAL, 7754 bytes)
+18/09/10 21:23:24 INFO Executor: Running task 0.0 in stage 4.0 (TID 4)
+18/09/10 21:23:24 INFO ShuffleBlockFetcherIterator: Getting 1 non-empty blocks out of 1 blocks
+18/09/10 21:23:24 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+18/09/10 21:23:24 INFO Executor: Finished task 0.0 in stage 4.0 (TID 4). 1782 bytes result sent to driver
+18/09/10 21:23:24 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 4) in 9 ms on localhost (executor driver) (1/1)
+18/09/10 21:23:24 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+18/09/10 21:23:24 INFO DAGScheduler: ResultStage 4 (collect at utils.scala:196) finished in 0.018 s
+18/09/10 21:23:24 INFO DAGScheduler: Job 2 finished: collect at utils.scala:196, took 0.590721 s
+18/09/10 21:23:24 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:23:24 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:23:24 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:23:24 INFO CodeGenerator: Code generated in 25.213433 ms
+18/09/10 21:23:24 INFO CodeGenerator: Code generated in 29.781628 ms
+18/09/10 21:23:24 INFO SparkContext: Starting job: collect at utils.scala:196
+18/09/10 21:23:24 INFO DAGScheduler: Got job 3 (collect at utils.scala:196) with 1 output partitions
+18/09/10 21:23:24 INFO DAGScheduler: Final stage: ResultStage 5 (collect at utils.scala:196)
+18/09/10 21:23:24 INFO DAGScheduler: Parents of final stage: List()
+18/09/10 21:23:24 INFO DAGScheduler: Missing parents: List()
+18/09/10 21:23:24 INFO DAGScheduler: Submitting ResultStage 5 (MapPartitionsRDD[31] at collect at utils.scala:196), which has no missing parents
+18/09/10 21:23:24 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 36.2 KB, free 343.7 MB)
+18/09/10 21:23:24 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 13.2 KB, free 343.7 MB)
+18/09/10 21:23:24 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on localhost:53856 (size: 13.2 KB, free: 343.8 MB)
+18/09/10 21:23:24 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1039
+18/09/10 21:23:24 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[31] at collect at utils.scala:196) (first 15 tasks are for partitions Vector(0))
+18/09/10 21:23:24 INFO TaskSchedulerImpl: Adding task set 5.0 with 1 tasks
+18/09/10 21:23:24 INFO BlockManagerInfo: Removed broadcast_4_piece0 on localhost:53856 in memory (size: 3.8 KB, free: 343.8 MB)
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 136
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 158
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 143
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 141
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 125
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 133
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 144
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 116
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 124
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 147
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 120
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 122
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 142
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 149
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 156
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 132
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 118
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 127
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 146
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 112
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 115
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 123
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 155
+18/09/10 21:23:24 INFO BlockManagerInfo: Removed broadcast_3_piece0 on localhost:53856 in memory (size: 12.7 KB, free: 343.8 MB)
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 148
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 154
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 113
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 129
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 110
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 140
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 145
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 157
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 134
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 114
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 159
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 138
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 117
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 151
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 153
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 139
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 128
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 137
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 119
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 130
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 150
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 126
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 135
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 121
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 152
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 111
+18/09/10 21:23:24 INFO ContextCleaner: Cleaned accumulator 131
+18/09/10 21:23:24 WARN TaskSetManager: Stage 5 contains a task of very large size (27702 KB). The maximum recommended task size is 100 KB.
+18/09/10 21:23:24 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 5, localhost, executor driver, partition 0, PROCESS_LOCAL, 28367215 bytes)
+18/09/10 21:23:24 INFO Executor: Running task 0.0 in stage 5.0 (TID 5)
+18/09/10 21:23:25 INFO BlockManager: Found block rdd_9_0 locally
+18/09/10 21:23:25 INFO CodeGenerator: Code generated in 39.059059 ms
+18/09/10 21:23:25 INFO Executor: 1 block locks were not released by TID = 5:
+[rdd_9_0]
+18/09/10 21:23:25 INFO Executor: Finished task 0.0 in stage 5.0 (TID 5). 2150 bytes result sent to driver
+18/09/10 21:23:25 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 5) in 484 ms on localhost (executor driver) (1/1)
+18/09/10 21:23:25 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+18/09/10 21:23:25 INFO DAGScheduler: ResultStage 5 (collect at utils.scala:196) finished in 0.494 s
+18/09/10 21:23:25 INFO DAGScheduler: Job 3 finished: collect at utils.scala:196, took 0.505849 s
+18/09/10 21:23:25 INFO BlockManagerInfo: Removed broadcast_5_piece0 on localhost:53856 in memory (size: 13.2 KB, free: 343.8 MB)
+18/09/10 21:23:25 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:23:30 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:23:30 INFO CodeGenerator: Code generated in 21.004202 ms
+18/09/10 21:23:30 INFO SparkContext: Starting job: collect at utils.scala:196
+18/09/10 21:23:30 INFO DAGScheduler: Got job 4 (collect at utils.scala:196) with 1 output partitions
+18/09/10 21:23:30 INFO DAGScheduler: Final stage: ResultStage 6 (collect at utils.scala:196)
+18/09/10 21:23:30 INFO DAGScheduler: Parents of final stage: List()
+18/09/10 21:23:30 INFO DAGScheduler: Missing parents: List()
+18/09/10 21:23:30 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[37] at collect at utils.scala:196), which has no missing parents
+18/09/10 21:23:30 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 36.2 KB, free 343.7 MB)
+18/09/10 21:23:30 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 13.1 KB, free 343.7 MB)
+18/09/10 21:23:30 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on localhost:53856 (size: 13.1 KB, free: 343.8 MB)
+18/09/10 21:23:30 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1039
+18/09/10 21:23:30 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (MapPartitionsRDD[37] at collect at utils.scala:196) (first 15 tasks are for partitions Vector(0))
+18/09/10 21:23:30 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks
+18/09/10 21:23:30 WARN TaskSetManager: Stage 6 contains a task of very large size (27702 KB). The maximum recommended task size is 100 KB.
+18/09/10 21:23:30 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 6, localhost, executor driver, partition 0, PROCESS_LOCAL, 28367215 bytes)
+18/09/10 21:23:30 INFO Executor: Running task 0.0 in stage 6.0 (TID 6)
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 177
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 169
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 168
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 174
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 163
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 178
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 184
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 176
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 183
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 166
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 180
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 185
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 182
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 170
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 181
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 165
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 173
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 171
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 164
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 186
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 175
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 187
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 172
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 179
+18/09/10 21:23:30 INFO ContextCleaner: Cleaned accumulator 167
+18/09/10 21:23:30 INFO BlockManager: Found block rdd_9_0 locally
+18/09/10 21:23:30 INFO Executor: 1 block locks were not released by TID = 6:
+[rdd_9_0]
+18/09/10 21:23:30 INFO Executor: Finished task 0.0 in stage 6.0 (TID 6). 1877 bytes result sent to driver
+18/09/10 21:23:30 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 6) in 498 ms on localhost (executor driver) (1/1)
+18/09/10 21:23:30 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+18/09/10 21:23:30 INFO DAGScheduler: ResultStage 6 (collect at utils.scala:196) finished in 0.507 s
+18/09/10 21:23:30 INFO DAGScheduler: Job 4 finished: collect at utils.scala:196, took 0.510924 s
+18/09/10 21:23:58 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:24:15 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:24:15 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:24:15 INFO CodeGenerator: Code generated in 10.336005 ms
+18/09/10 21:24:15 INFO CodeGenerator: Code generated in 11.346043 ms
+18/09/10 21:24:15 INFO SparkContext: Starting job: collect at utils.scala:196
+18/09/10 21:24:15 INFO DAGScheduler: Got job 5 (collect at utils.scala:196) with 1 output partitions
+18/09/10 21:24:15 INFO DAGScheduler: Final stage: ResultStage 7 (collect at utils.scala:196)
+18/09/10 21:24:15 INFO DAGScheduler: Parents of final stage: List()
+18/09/10 21:24:15 INFO DAGScheduler: Missing parents: List()
+18/09/10 21:24:15 INFO DAGScheduler: Submitting ResultStage 7 (MapPartitionsRDD[43] at collect at utils.scala:196), which has no missing parents
+18/09/10 21:24:15 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 32.0 KB, free 343.7 MB)
+18/09/10 21:24:15 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 12.2 KB, free 343.7 MB)
+18/09/10 21:24:15 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on localhost:53856 (size: 12.2 KB, free: 343.8 MB)
+18/09/10 21:24:15 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1039
+18/09/10 21:24:15 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 7 (MapPartitionsRDD[43] at collect at utils.scala:196) (first 15 tasks are for partitions Vector(0))
+18/09/10 21:24:15 INFO TaskSchedulerImpl: Adding task set 7.0 with 1 tasks
+18/09/10 21:24:15 WARN TaskSetManager: Stage 7 contains a task of very large size (27702 KB). The maximum recommended task size is 100 KB.
+18/09/10 21:24:15 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 7, localhost, executor driver, partition 0, PROCESS_LOCAL, 28367215 bytes)
+18/09/10 21:24:15 INFO Executor: Running task 0.0 in stage 7.0 (TID 7)
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 201
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 214
+18/09/10 21:24:16 INFO BlockManagerInfo: Removed broadcast_6_piece0 on localhost:53856 in memory (size: 13.1 KB, free: 343.8 MB)
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 193
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 207
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 200
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 212
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 205
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 191
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 204
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 210
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 203
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 198
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 199
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 211
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 206
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 209
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 195
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 197
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 208
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 194
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 196
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 215
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 192
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 213
+18/09/10 21:24:16 INFO ContextCleaner: Cleaned accumulator 202
+18/09/10 21:24:16 INFO BlockManager: Found block rdd_9_0 locally
+18/09/10 21:24:16 INFO CodeGenerator: Code generated in 18.202146 ms
+18/09/10 21:24:16 INFO Executor: 1 block locks were not released by TID = 7:
+[rdd_9_0]
+18/09/10 21:24:16 INFO Executor: Finished task 0.0 in stage 7.0 (TID 7). 1562 bytes result sent to driver
+18/09/10 21:24:16 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 7) in 397 ms on localhost (executor driver) (1/1)
+18/09/10 21:24:16 INFO TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+18/09/10 21:24:16 INFO DAGScheduler: ResultStage 7 (collect at utils.scala:196) finished in 0.407 s
+18/09/10 21:24:16 INFO DAGScheduler: Job 5 finished: collect at utils.scala:196, took 0.413488 s
+18/09/10 21:25:17 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:25:17 INFO SparkContext: Starting job: collect at utils.scala:196
+18/09/10 21:25:17 INFO DAGScheduler: Got job 6 (collect at utils.scala:196) with 1 output partitions
+18/09/10 21:25:17 INFO DAGScheduler: Final stage: ResultStage 8 (collect at utils.scala:196)
+18/09/10 21:25:17 INFO DAGScheduler: Parents of final stage: List()
+18/09/10 21:25:17 INFO DAGScheduler: Missing parents: List()
+18/09/10 21:25:17 INFO DAGScheduler: Submitting ResultStage 8 (MapPartitionsRDD[49] at collect at utils.scala:196), which has no missing parents
+18/09/10 21:25:17 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 36.2 KB, free 343.7 MB)
+18/09/10 21:25:17 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 13.1 KB, free 343.7 MB)
+18/09/10 21:25:17 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on localhost:53856 (size: 13.1 KB, free: 343.8 MB)
+18/09/10 21:25:17 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1039
+18/09/10 21:25:17 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 8 (MapPartitionsRDD[49] at collect at utils.scala:196) (first 15 tasks are for partitions Vector(0))
+18/09/10 21:25:17 INFO TaskSchedulerImpl: Adding task set 8.0 with 1 tasks
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 233
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 229
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 240
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 243
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 236
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 242
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 219
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 220
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 232
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 224
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 238
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 239
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 221
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 223
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 222
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 237
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 230
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 225
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 231
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 241
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 234
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 235
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 226
+18/09/10 21:25:17 INFO BlockManagerInfo: Removed broadcast_7_piece0 on localhost:53856 in memory (size: 12.2 KB, free: 343.8 MB)
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 228
+18/09/10 21:25:17 INFO ContextCleaner: Cleaned accumulator 227
+18/09/10 21:25:17 WARN TaskSetManager: Stage 8 contains a task of very large size (27702 KB). The maximum recommended task size is 100 KB.
+18/09/10 21:25:17 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 8, localhost, executor driver, partition 0, PROCESS_LOCAL, 28367215 bytes)
+18/09/10 21:25:17 INFO Executor: Running task 0.0 in stage 8.0 (TID 8)
+18/09/10 21:25:17 INFO BlockManager: Found block rdd_9_0 locally
+18/09/10 21:25:18 INFO Executor: 1 block locks were not released by TID = 8:
+[rdd_9_0]
+18/09/10 21:25:18 INFO Executor: Finished task 0.0 in stage 8.0 (TID 8). 1877 bytes result sent to driver
+18/09/10 21:25:18 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 8) in 423 ms on localhost (executor driver) (1/1)
+18/09/10 21:25:18 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+18/09/10 21:25:18 INFO DAGScheduler: ResultStage 8 (collect at utils.scala:196) finished in 0.434 s
+18/09/10 21:25:18 INFO DAGScheduler: Job 6 finished: collect at utils.scala:196, took 0.440582 s
+18/09/10 21:26:05 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:26:22 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:26:22 INFO SparkContext: Starting job: collect at utils.scala:196
+18/09/10 21:26:22 INFO DAGScheduler: Got job 7 (collect at utils.scala:196) with 1 output partitions
+18/09/10 21:26:22 INFO DAGScheduler: Final stage: ResultStage 9 (collect at utils.scala:196)
+18/09/10 21:26:22 INFO DAGScheduler: Parents of final stage: List()
+18/09/10 21:26:22 INFO DAGScheduler: Missing parents: List()
+18/09/10 21:26:22 INFO DAGScheduler: Submitting ResultStage 9 (MapPartitionsRDD[53] at collect at utils.scala:196), which has no missing parents
+18/09/10 21:26:22 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 27.9 KB, free 343.7 MB)
+18/09/10 21:26:22 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 10.8 KB, free 343.7 MB)
+18/09/10 21:26:22 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on localhost:53856 (size: 10.8 KB, free: 343.8 MB)
+18/09/10 21:26:22 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1039
+18/09/10 21:26:22 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 9 (MapPartitionsRDD[53] at collect at utils.scala:196) (first 15 tasks are for partitions Vector(0))
+18/09/10 21:26:22 INFO TaskSchedulerImpl: Adding task set 9.0 with 1 tasks
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 267
+18/09/10 21:26:22 INFO BlockManagerInfo: Removed broadcast_8_piece0 on localhost:53856 in memory (size: 13.1 KB, free: 343.8 MB)
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 256
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 253
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 266
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 262
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 255
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 249
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 251
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 250
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 259
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 264
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 252
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 258
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 254
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 263
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 268
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 261
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 265
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 271
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 248
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 257
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 247
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 260
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 270
+18/09/10 21:26:22 INFO ContextCleaner: Cleaned accumulator 269
+18/09/10 21:26:22 WARN TaskSetManager: Stage 9 contains a task of very large size (27702 KB). The maximum recommended task size is 100 KB.
+18/09/10 21:26:22 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 9, localhost, executor driver, partition 0, PROCESS_LOCAL, 28367215 bytes)
+18/09/10 21:26:22 INFO Executor: Running task 0.0 in stage 9.0 (TID 9)
+18/09/10 21:26:22 INFO BlockManager: Found block rdd_9_0 locally
+18/09/10 21:26:23 INFO MemoryStore: Block taskresult_9 stored as bytes in memory (estimated size 19.0 MB, free 324.7 MB)
+18/09/10 21:26:23 INFO BlockManagerInfo: Added taskresult_9 in memory on localhost:53856 (size: 19.0 MB, free: 324.8 MB)
+18/09/10 21:26:23 INFO Executor: Finished task 0.0 in stage 9.0 (TID 9). 19932540 bytes result sent via BlockManager)
+18/09/10 21:26:23 INFO TransportClientFactory: Successfully created connection to localhost/127.0.0.1:53856 after 1 ms (0 ms spent in bootstraps)
+18/09/10 21:26:23 INFO TaskSetManager: Finished task 0.0 in stage 9.0 (TID 9) in 1170 ms on localhost (executor driver) (1/1)
+18/09/10 21:26:23 INFO BlockManagerInfo: Removed taskresult_9 on localhost:53856 in memory (size: 19.0 MB, free: 343.8 MB)
+18/09/10 21:26:23 INFO TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool 
+18/09/10 21:26:23 INFO DAGScheduler: ResultStage 9 (collect at utils.scala:196) finished in 1.185 s
+18/09/10 21:26:23 INFO DAGScheduler: Job 7 finished: collect at utils.scala:196, took 1.188758 s
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 274
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 279
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 283
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 288
+18/09/10 21:26:23 INFO BlockManagerInfo: Removed broadcast_9_piece0 on localhost:53856 in memory (size: 10.8 KB, free: 343.8 MB)
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 298
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 275
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 285
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 297
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 277
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 280
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 284
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 276
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 295
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 289
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 278
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 290
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 282
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 294
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 293
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 286
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 292
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 296
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 281
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 287
+18/09/10 21:26:23 INFO ContextCleaner: Cleaned accumulator 291
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 35
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 33
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 70
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 44
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 71
+18/09/10 21:26:24 INFO BlockManagerInfo: Removed broadcast_1_piece0 on localhost:53856 in memory (size: 12.7 KB, free: 343.8 MB)
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 86
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 84
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 37
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 49
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 92
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 79
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 76
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 80
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 63
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 81
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 61
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 55
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 52
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 57
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 34
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 67
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 83
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 38
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 66
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 60
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 42
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 58
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 62
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 59
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 36
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 40
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 93
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned shuffle 0
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 64
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 68
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 72
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 87
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 32
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 77
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 30
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 43
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 91
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 54
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 47
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 75
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 56
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 69
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 39
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 51
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 65
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 73
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 85
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 53
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 29
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 82
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 50
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 90
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 48
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 45
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 41
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 31
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 89
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 74
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 88
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 78
+18/09/10 21:26:24 INFO ContextCleaner: Cleaned accumulator 46
+18/09/10 21:26:46 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+18/09/10 21:26:46 INFO SparkContext: Starting job: collect at utils.scala:196
+18/09/10 21:26:46 INFO DAGScheduler: Got job 8 (collect at utils.scala:196) with 1 output partitions
+18/09/10 21:26:46 INFO DAGScheduler: Final stage: ResultStage 10 (collect at utils.scala:196)
+18/09/10 21:26:46 INFO DAGScheduler: Parents of final stage: List()
+18/09/10 21:26:46 INFO DAGScheduler: Missing parents: List()
+18/09/10 21:26:46 INFO DAGScheduler: Submitting ResultStage 10 (MapPartitionsRDD[57] at collect at utils.scala:196), which has no missing parents
+18/09/10 21:26:46 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 27.9 KB, free 343.8 MB)
+18/09/10 21:26:46 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 10.8 KB, free 343.8 MB)
+18/09/10 21:26:46 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on localhost:53856 (size: 10.8 KB, free: 343.8 MB)
+18/09/10 21:26:46 INFO SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:1039
+18/09/10 21:26:46 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 10 (MapPartitionsRDD[57] at collect at utils.scala:196) (first 15 tasks are for partitions Vector(0))
+18/09/10 21:26:46 INFO TaskSchedulerImpl: Adding task set 10.0 with 1 tasks
+18/09/10 21:26:46 WARN TaskSetManager: Stage 10 contains a task of very large size (27702 KB). The maximum recommended task size is 100 KB.
+18/09/10 21:26:46 INFO TaskSetManager: Starting task 0.0 in stage 10.0 (TID 10, localhost, executor driver, partition 0, PROCESS_LOCAL, 28367215 bytes)
+18/09/10 21:26:46 INFO Executor: Running task 0.0 in stage 10.0 (TID 10)
+18/09/10 21:26:46 INFO BlockManager: Found block rdd_9_0 locally
+18/09/10 21:26:47 INFO MemoryStore: Block taskresult_10 stored as bytes in memory (estimated size 19.0 MB, free 324.8 MB)
+18/09/10 21:26:47 INFO BlockManagerInfo: Added taskresult_10 in memory on localhost:53856 (size: 19.0 MB, free: 324.8 MB)
+18/09/10 21:26:47 INFO Executor: Finished task 0.0 in stage 10.0 (TID 10). 19932540 bytes result sent via BlockManager)
+18/09/10 21:26:47 INFO TaskSetManager: Finished task 0.0 in stage 10.0 (TID 10) in 848 ms on localhost (executor driver) (1/1)
+18/09/10 21:26:47 INFO TaskSchedulerImpl: Removed TaskSet 10.0, whose tasks have all completed, from pool 
+18/09/10 21:26:47 INFO BlockManagerInfo: Removed taskresult_10 on localhost:53856 in memory (size: 19.0 MB, free: 343.8 MB)
+18/09/10 21:26:47 INFO DAGScheduler: ResultStage 10 (collect at utils.scala:196) finished in 0.859 s
+18/09/10 21:26:47 INFO DAGScheduler: Job 8 finished: collect at utils.scala:196, took 0.862947 s
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 311
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 323
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 305
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 325
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 318
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 307
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 317
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 316
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 313
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 301
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 321
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 320
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 303
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 312
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 310
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 314
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 306
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 308
+18/09/10 21:26:48 INFO BlockManagerInfo: Removed broadcast_10_piece0 on localhost:53856 in memory (size: 10.8 KB, free: 343.8 MB)
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 324
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 319
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 302
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 309
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 322
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 315
+18/09/10 21:26:48 INFO ContextCleaner: Cleaned accumulator 304

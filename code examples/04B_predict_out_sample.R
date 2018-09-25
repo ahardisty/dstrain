@@ -10,6 +10,8 @@ DATA_IN_LOC <- getwd() # default to working directory; change as appropriate
 DATA_OUT_LOC <- getwd() # default to working directory; change as appropriate
 
 # Set standard deviation levels for temperature scenarios
+
+# all of these need to be set...somehow...outside of the function. Called as a function...and 
 temp_high <- .85
 temp_mid_high <- .5 
 # temp_normal: placeholder, no change
@@ -47,6 +49,7 @@ dbGetInfo(ch)
 baseTbl <- "EUA_TEST"
 modelTbl <- "EUA_COMPLETE"
 
+# gotta be in a file...too many arguments, not enough flexibility. Limit number...in out?
 predictQuery <- str_replace_all(paste("SELECT ", 
                                       baseTbl,".usg_dt,", 
                                       baseTbl,".day_of_year,",
@@ -70,8 +73,8 @@ predictQuery_list <- map2(.x = predictQuery, .y = model_seq, .f = paste)
 
 baseTbl <- "MODELS"
 # modelTbl <- "EUA_COMPLETE"
-
-modelQuery <- str_replace_all(paste("SELECT ", 
+# sql query template with variables from model info audit trail
+modelQuery <- stringr::str_replace_all(paste("SELECT ", 
                                       baseTbl,".customer,", 
                                       baseTbl,".tou_cd,",
                                       baseTbl,".model_id,",

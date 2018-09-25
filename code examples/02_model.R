@@ -17,9 +17,7 @@ DATA_OUT_LOC <- getwd() # default to working directory; change as appropriate
 temp_scenario <- c('temp_high','temp_mid_high','temp_normal','temp_mid_low','temp_low')
 SCENARIO_XREF <- data.frame(rt_sched_cd = rt_sched_cd_model, temp_scenario)
 
-
 # Create connection string ----------------------------
-
 # ODBC
 DSN <- 'TDDSNP'
 UID <- USER
@@ -42,7 +40,7 @@ dbGetInfo(ch)
 
 # Create SQL query to bring Train data into memory ----------------------------------------------------
 
-fitQuery <- str_replace_all(paste("SELECT 
+fitQuery <- stringr::str_replace_all(paste("SELECT 
 a.customer
 , a.tou_cd
 , a.temp_scenario
@@ -61,17 +59,23 @@ WHERE a.Y >0 AND b.model_id =")
 
 
 # create list for looping function (applying function over a list)
-fitQuery_list <- map2(.x = fitQuery, .y = model_seq, .f = paste)
+fitQuery_list <- purrr::map2(.x = fitQuery, .y = model_seq, .f = paste)
 fitQuery <- fitQuery_list[[1]]
 # Train model on actual temperature and actual usage ----------------------
 
-estimateModel_memory <- function(query = fitQuery, channel = ch, rate_code = rt_sched_cd_model
-                                 , scenarios = SCENARIO_XREF)
+estimateModel_memory <- function(
+  query = fitQuery,
+  channel = ch,
+  rate_code = rt_sched_cd_model,
+  scenarios = SCENARIO_XREF
+  )
 {
   # start timing
   start_model_time <- proc.time() 
   
   # sql query to extract train data
+  # call package directly
+  # figoure out package selection;  conn specific fun?
   TRAIN <- dbGetQuery(channel, query)
   
   # nest and fit on train data
@@ -85,6 +89,7 @@ estimateModel_memory <- function(query = fitQuery, channel = ch, rate_code = rt_
 
   # assign location of saved model elements
   OUT_NAME <- paste('model_id',unique(TRAIN_MODEL[[3]]), sep = '_')
+  # what is this?
   OUT_FILE <- paste(OUT_NAME,'model.rda',sep='_')
   OUT_PATH <- paste0(DATA_OUT_LOC, '/', OUT_FILE)
   
@@ -100,9 +105,11 @@ estimateModel_memory <- function(query = fitQuery, channel = ch, rate_code = rt_
     group_by(model_id, model_date) %>% 
     summarise(number_of_customers = n()) %>% 
     mutate(cycle_time = cycle_time), file = 'model_time.csv',sep = ',', append = TRUE, row.names = FALSE, col.names = FALSE)
-
+# add date element to file name
+  
   print(paste('Model Fit for model_id', unique(TRAIN_MODEL[[3]]),'Complete in', cycle_time,'minutes'))
-
+# what is the bracket reference?
+  
   # merge with XREF to get full model values and all temp scenarios
   TRAIN_MODEL <- left_join(TRAIN_MODEL, scenarios, by = c('rt_sched_cd'))
   
@@ -113,9 +120,12 @@ estimateModel_memory <- function(query = fitQuery, channel = ch, rate_code = rt_
 # retain model objects for next step
 MODELS <- map(.x = fitQuery_list, .f = estimateModel_memory) %>% data.table::rbindlist()
 MODELS <- TRAIN_MODEL
+# figure this out (above, two models)
+
 # check output file -------------------------------------------------------
 
 model_output_summary <- fread(paste0(DATA_OUT_LOC,'/','model_time.csv'), header = FALSE,
+                              # pattern or time based? facet by something / split plot / filter
       col.names = c('model_group','model_date','model_group_size','group_cycle_time_minutes'))
 
 # http://stackoverflow.com/questions/5118074/reusing-a-model-built-in-r

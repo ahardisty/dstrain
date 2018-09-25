@@ -1,3 +1,8 @@
+# this needs to read an excel file on the repo for all parameters
+# this will allow for easy interface for end use
+# provides audit trail of model properties / elements / artifacts
+# use lan_id as a field; multiple directories, drivers, model, etc
+
 ## SCRIPT TO BE USED ON FOR IN-MEMORY PROCESSING, REQUIRES
 # 64 BIT ODBC DRIVER
 # saves model objects for looping in next step
@@ -10,7 +15,7 @@ source('./Phase_3-3/01_functions.R') # load functions (verify path)
 DATA_OUT_LOC <- getwd() # default to working directory; change as appropriate
 rt_sched_cd_model <- 'HETOUA' # rt_sched_cd for modeling
 LOWER_MODEL_ID <- 1 #first model group
-UPPER_MODEL_ID <- 2 #last model group
+UPPER_MODEL_ID <- 3 #last model group
 
 # # create cross-ref table for model placeholder
 # temp_scenario <- factor(c('temp_high','temp_mid_high','temp_normal','temp_mid_low','temp_low'))
@@ -19,6 +24,7 @@ UPPER_MODEL_ID <- 2 #last model group
 # no user intervention beyond defining variables above
 model_seq <- (LOWER_MODEL_ID:UPPER_MODEL_ID) # vector of model groups for sequential modeling
 rt_sched_cd <- paste0("'",rt_sched_cd_model,"'") # rt_sched_cd for SQL query
+# enquo / quo / nse
 
 # Create connection string ----------------------------
 
@@ -61,6 +67,7 @@ fitQuery <- stringr::str_replace_all(paste("SELECT
                                            WHERE a.Y >0 AND b.model_id =")
                                      , "[\r\n]" , "")
 
+# enquo this? ideally sourced from a sql file to reduce errors in script
 
 # create list for looping function (applying function over a list)
 fitQuery_list <- map2(.x = fitQuery, .y = model_seq, .f = paste)
@@ -85,19 +92,19 @@ estimateModel_memory <- function(query = fitQuery, channel = ch, rate_code = rt_
   read_time <- (proc.time() - start_read_time)[[3]]/60
   
   # nest and fit on train data
-  print("nesting data and fitting earth model")
+  print("nesting data and fitting earth model") # change to allow for differnt model. what about caret? wrap it up in a train object? Broom?
   start_scenario_time <- proc.time()
   TRAIN <- TRAIN %>%
     group_by(temp_scenario, customer, tou_cd, model_id ,model_id_sm) %>% 
     nest(.key = TRAIN) %>% 
-    mutate(MODEL = map(TRAIN, ~ earth(Y ~ X, data = ., nprune = 3)),
-           rt_sched_cd = rate_code,
-           model_date = format(Sys.Date(), '%Y-%m-%d'),
+    mutate(MODEL = map(TRAIN, ~ earth(Y ~ X, data = ., nprune = 3)), 
+           rt_sched_cd = rate_code, # why?
+           model_date = format(Sys.Date(), '%Y-%m-%d'), #change to predict date, need to distinguish between train / test / validate / predict
            model_time = Sys.time()) %>% 
     select(customer, tou_cd, model_id, model_id_sm, rt_sched_cd, model_date, model_time, MODEL)
   
   # assign location of saved model elements
-  OUT_NAME <- paste('model_id',unique(TRAIN$model_id), sep = '_')
+  OUT_NAME <- paste('model_id',unique(TRAIN$model_id), sep = '_') # better way for this
   OUT_FILE <- paste(OUT_NAME,unique(TRAIN$rt_sched_cd),'model.rds',sep='_')
   OUT_PATH <- paste0(DATA_OUT_LOC, '/', OUT_FILE)
   
@@ -125,6 +132,8 @@ estimateModel_memory <- function(query = fitQuery, channel = ch, rate_code = rt_
                                               , model_date, MODEL) %>% 
                  unnest(), append = TRUE, row.names = FALSE)
   write_time <- (proc.time() - start_write_time)[[3]]/60
+  
+  # can this go to a parquet file?
   
   # create cycle time of model fit
   cycle_time <- (proc.time() - start_model_time)[[3]]/60
@@ -156,6 +165,7 @@ walk(.x = fitQuery_list, .f = estimateModel_memory)
 # Visualize model summary file -------------------------------------------------------
 
 model_output_summary <- fread(paste0(DATA_OUT_LOC,'/','model_time.csv'), header = FALSE,
+                              # make this a text file for easier management, what about a roxygen...slow down...
                               col.names = c('model_group','model_date','model_time'
                                             ,'rt_sched_cd','model_group_size','model_io_type'
                                             , 'read_time', 'scenario_time', 'write_time', 'cycle_time')) %>% 
@@ -177,6 +187,7 @@ model_output_plot <- ggplot(model_output_summary,aes(x = variable, y = value)) +
   # scale_size_continuous(name = 'Number of Customers') +
   # labs(x = NULL, y = NULL) 
 # save model output summary
+# pipe or map this
 ggsave('model_output_summary.png', model_output_plot, width = 11.5, height = 8)
 
 

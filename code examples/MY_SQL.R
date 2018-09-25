@@ -5,15 +5,15 @@
 # MySQL -------------------------------------------------------------------
 library(RMySQL)
 library(data.table)
-ch <- dbConnect(MySQL(),
-                user = 'root',
+library(devtools)
+devtools::install_github("rstats-db/DBI")
+devtools::install_github("rstats-db/RMySQL")
+con <- odbc::dbConnect(MySQL(),
+                username = 'root',
                 host = 'localhost',
                 dbname = 'RDA_P_REVR')
 
-library(devtools)
 
-devtools::install_github("rstats-db/DBI")
-devtools::install_github("rstats-db/RMySQL")
 
 dbGetInfo(ch)
 
@@ -42,15 +42,15 @@ dbGetQuery(conn = ch, statement = QUERY)
 library(RMySQL)
 
 install.packages('DBI')
-DATA_LIST <- map(.x = QUERY_LIST[[1]], .f = dbGetQuery, ch) # list of DF in memory from sql VOL table commands  
-DATA_LIST <- map(.f = dbSendQuery, ch, .x = QUERY_LIST, ) # list of DF in memory from sql VOL table commands  
+DATA_LIST <- map(.x = QUERY_LIST[[1]], .f = dbGetQuery, ch) # list of DF in memory from sql VOL table commands
+DATA_LIST <- map(.f = dbSendQuery, ch, .x = QUERY_LIST, ) # list of DF in memory from sql VOL table commands
 map()
 data_query <- dbSendQuery(ch, QUERY_LIST[[1]])
 data <- dbFetch(data_query)
 df <- c(1,2)
 
 
-DATA_LIST <- map(.f = dbGetQuery, .x = QUERY, ch) # list of DF in memory from sql VOL table commands  
+DATA_LIST <- map(.f = dbGetQuery, .x = QUERY, ch) # list of DF in memory from sql VOL table commands
 
 purrr::flatten(newNames)
 
@@ -118,7 +118,7 @@ usg_dt <- seq.Date(train_start_date,train_end_date, by = 'days')
 
 temp_scenario <- 'Temperature_Normal'
 dt <- data.table(customer, usg_dt, temp_scenario)
-                 
+
 dt[,month := data.table::month(usg_dt),]
 dt[,hour := rep(c(0:1)), by = .(usg_dt)]
 dt[,day_of_week := wday(usg_dt), ]
