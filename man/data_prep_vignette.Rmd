@@ -1,0 +1,78 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Environment Prep
+load packages
+```{r}
+search()
+library(tidyverse)
+search()
+```
+
+check for global objects
+```{r}
+ls()
+```
+
+create model population for multiple baseline_terr_cd
+```{r}
+
+TRAIN <- data.frame(
+  deriv_terr_cd = LETTERS[1:10], 
+  opr_area_cd = paste0(LETTERS[11:20],LETTERS[20:11]),
+  n = round(runif(n = 10, min = 10000, 190000))
+  )
+
+TRAIN
+```
+
+
+check for global objects again
+```{r}
+ls()
+```
+
+## Data Prep
+declare active variables
+```{r}
+part_by <- 'group_id'
+step_nm <- 'data_prep'
+out_ext <- 'sql'
+step_num = 2
+```
+
+declare passive variables
+```{r}
+terr_cd <- TRAIN$deriv_terr_cd
+terr_cd
+```
+
+create one sql file using '[ ]' notation
+```{r}
+dstrain::model_pop_sql(terr_cd = terr_cd[1], part_by = part_by
+                       , step_nm = step_nm, out_ext = out_ext, step_num = step_num)
+```
+
+create multiple sql files using purrr
+```{r}
+terr_cd %>% walk(~dstrain::model_pop_sql(terr_cd = .x, part_by = part_by, step_nm = step_nm, out_ext = out_ext, step_num = step_num))
+
+```
+
+> "He who gives up [code] safety for [code] speed deserves neither."
+([via](https://twitter.com/hadleywickham/status/504368538874703872))
