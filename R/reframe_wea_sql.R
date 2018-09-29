@@ -1,4 +1,4 @@
-reframe_wea_sql <- function(wea_yr = 2017, tou = "hetoua", wea_id = "(1, 22, 23)", wea_src = "PGE", train = TRUE)  {
+reframe_wea_sql <- function(wea_yr = 2017, tou = "hetoua", wea_id = "(1, 22, 23)", wea_stn_owner = "PGE")  {
 
 obj_in <- paste0("`",paste("wea",wea_yr, tou, sep = "_"),"`")
 
@@ -96,7 +96,7 @@ join_body <- c(
 where <- paste(
   "WHERE xref.train_year =", wea_yr,
   "AND wea.wea_data_typ_id IN", wea_id,
-  "AND stn.wea_stn_owner =", wea_src,
+  "AND stn.wea_stn_owner =", wea_stn_owner,
   ") AS wea")
 
 tou_body <- c(
