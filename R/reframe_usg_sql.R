@@ -64,14 +64,22 @@ reframe_usg_sql <- function(terr_cd, usg_yr = 2017, tou = "hetoua", usg_id = "D"
     "INNER JOIN `rda`.`rdatables`.`elec_intvl_usg_all` AS usg
     ON cust.uniq_sa_id = usg.uniq_sa_id
 
+<<<<<<< HEAD
     INNER JOIN `rda`.`rdadata`.`time_shift_xref` AS xref
+=======
+    INNER JOIN  `rda`.`rdadata`.`time_shift_xref` AS xref
+>>>>>>> 0129136f1efdf0773aef37be1ce52fe34650a830
     ON usg.usg_dt = xref.calendar_date"
   )
 
   where <- paste("where usg_id =",usg_id)
 
   tou_body <- c(
+<<<<<<< HEAD
     "JOIN `rda`.`rdadata`.`tou_lookup_2017_hetoua` AS tou
+=======
+    "JOIN  `rda`.`rdadata`.`tou_lookup_2017_hetoua` AS tou
+>>>>>>> 0129136f1efdf0773aef37be1ce52fe34650a830
     ON usg.usg_dt = tou.calendar_date
     AND usg.elec_intvl_end_dttm BETWEEN tou.tou_data_from_dttm AND tou.tou_data_to_dttm"
   )
@@ -79,9 +87,13 @@ reframe_usg_sql <- function(terr_cd, usg_yr = 2017, tou = "hetoua", usg_id = "D"
   agg_body <- c(
     "")
 
+<<<<<<< HEAD
   usg_tou_query <- list(head = create_head, partition = c(part_body, part_str),
                         select = c(agg_head, join_head), from = from_body,
                         join = c(join_body, tou_body), where = where, agg_body = agg_body)
+=======
+  usg_tou_query <- list(create_head,part_body, part_str,agg_head, join_head, from_body, join_body, where, tou_body, agg_body)
+>>>>>>> 0129136f1efdf0773aef37be1ce52fe34650a830
   readr::write_lines(usg_tou_query, path  = out_path, append = FALSE)
   print("check output dir...")
 }
