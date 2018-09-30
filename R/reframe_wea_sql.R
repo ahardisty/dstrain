@@ -1,10 +1,23 @@
-reframe_wea_sql <- function(wea_yr = 2017, tou = "hetoua", wea_id = "(1, 22, 23)", wea_stn_owner = "PGE")  {
+reframe_wea_sql <- function(usg_typ, terr_cd, usg_yr, pred_yr, wea_stn_owner, tou = "hetoua")  {
+  setwd("~")
+  setwd('Documents/dstrain/')
+  if (usg_typ == "train") {
+    wea_data_typ_id <- "(1)"
+  } else {
+    wea_data_typ_id <- "(22, 23)"
+  }
+  step_num <- "06"
+  out_ext <- ".sql"
 
-obj_in <- paste0("`",paste("wea",wea_yr, tou, sep = "_"),"`")
+  wea_stn_owner_quo <- paste0("'", wea_stn_owner, "'")
 
-obj_out <- paste("wea",wea_yr, tou, sep = "_")
+  obj_in <- stringr::str_to_lower(paste0("`",paste("wea",usg_yr, tou, sep = "_"),"`"))
+  obj_out <- stringr::str_to_lower(paste("wea",usg_yr, tou, sep = "_"))
+  # pop_in <- stringr::str_to_lower(paste0("`",paste("model_population", terr_cd, sep = "_"),"`"))
 
-out_path <- paste0('data/sql/',obj_out,".sql")
+  file_nm <- stringr::str_to_lower(paste0(step_num,"_", obj_out, out_ext))
+
+  out_path <- paste0('data/sql/',file_nm)
 
 create_head <- paste(
   paste0("DROP TABLE IF EXISTS `rda`.`rdadata`.",obj_in),
@@ -27,7 +40,8 @@ part_body <- c(
   opr_area_cd,
   wea_hr,
   rt_sched_cd,
-  tou_cd, meas_val)"
+  tou_cd,
+  meas_val)"
   )
 
 part_str <-  c(
@@ -58,7 +72,8 @@ join_head <- c(
   "(SELECT xref.calendar_date,
   xref.month_of_year,
   xref.day_of_month,
-  xref.train_year,
+  xref.year_of_calendar,
+  xref.year_of_calendar_shift,
   xref.predict_year,
   xref.day_of_week,
   xref.week_of_year,
@@ -80,7 +95,7 @@ from_body <- c(
   )
 
 join_body <- c(
-"JOIN `rda`.`rdatables`.`weather_data`  AS wea
+"JOIN `rda`.`rdatables`.`weather_data` AS wea
   ON xref.calendar_date = wea.wea_dt
   JOIN `rda`.`rdatables`.`weather_station` AS stn
   ON wea.wea_stn_cd = stn.wea_stn_cd
@@ -93,15 +108,19 @@ join_body <- c(
   ON terr_xref.wea_stn_cd = area_xref.wea_stn_cd"
 )
 
-where <- paste(
-  "WHERE xref.train_year =", wea_yr,
-  "AND wea.wea_data_typ_id IN", wea_id,
-  "AND stn.wea_stn_owner =", wea_stn_owner,
-  ") AS wea")
+where <- c(
+  paste("WHERE xref.year_of_calendar =", usg_yr,
+        "AND xref.year_of_calendar_shift =", pred_yr,
+        "AND wea.wea_data_typ_id IN", wea_data_typ_id,
+        "AND stn.wea_stn_owner =", wea_stn_owner_quo,") AS wea")
+  )
 
 tou_body <- c(
-"JOIN `rda`.`rdadata`.`tou_lookup_2017_hetoua` AS tou
-ON wea.calendar_date = tou.calendar_date
+"JOIN `rda`.`rdadata`.`tou_lookup_hetoua` AS tou
+ON wea.year_of_calendar = tou.year_of_calendar
+ON wea.year_of_calendar_shift = tou.year_of_calendar_shift
+ON wea.month_of_year, = month_of_year,
+ON wea.day_of_year, = tou.day_of_year,
 AND wea.wea_dttm BETWEEN tou.tou_data_from_dttm AND tou.tou_data_to_dttm")
 
 agg_body <- c(
@@ -126,8 +145,15 @@ agg_body <- c(
 
 wea_tou_query <- list(create_head,part_body, part_str,agg_head, join_head, from_body, join_body, where, tou_body, agg_body)
 readr::write_lines(wea_tou_query, path  = out_path, append = FALSE)
-print("check output dir...")
+
 }
 
-reframe_wea_sql()
+terr_cd <- 'X'
+usg_yr <-  2017
+pred_yr <-  2018
+tou <-  "hetoua"
+usg_typ <-  "train"
+wea_stn_owner <-  "PGE"
 
+reframe_wea_sql(usg_typ = "train", terr_cd = 'X', usg_yr = 2017, pred_yr =  2018
+                , tou = "hetoua", wea_stn_owner =  "PGE")

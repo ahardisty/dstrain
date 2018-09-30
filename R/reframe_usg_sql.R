@@ -1,17 +1,33 @@
-reframe_usg_sql <- function(terr_cd, usg_yr = 2017, tou = "hetoua", usg_id = "D", train = TRUE)  {
+reframe_usg_sql <- function(terr_cd, usg_yr = 2017, tou = "hetoua", ener_dir_cd = 'D', train = TRUE)  {
+  setwd("~")
+  setwd('Documents/dstrain/')
+  # proj_nm <- "eua"
+  step_num <- "03"
+  out_ext <- ".sql"
+  # dir_out <-  'data_prep'
+  # schema_in <- '`rda`.`rdatables`.'
+  # schema_out <- '`rda`.`rdadata`.'
+  # tbl_in <- 'model_population'
+  # tbl_out <- "model_population"
+  # terr_cd_quo <- paste0("'",terr_cd,"'")
 
   obj_in <- stringr::str_to_lower(paste0("`",paste("usg",usg_yr, tou, terr_cd, sep = "_"),"`"))
   obj_out <- stringr::str_to_lower(paste("usg",usg_yr, tou, terr_cd, sep = "_"))
   pop_in <- stringr::str_to_lower(paste0("`",paste("model_population", terr_cd, sep = "_"),"`"))
 
-  out_path <- paste0('data/sql/',obj_out,".sql")
+  file_nm <- stringr::str_to_lower(paste0(step_num,"_", obj_out, out_ext))
+
+  out_path <- paste0('data/sql/',file_nm)
 
   create_head <- paste(
     paste0("DROP TABLE IF EXISTS `rda`.`rdadata`.",obj_in),
     paste0("CREATE TABLE `rda`.`rdadata`.",obj_in), sep = ';\n')
 
   part_body <- c(
-    "(calendar_date,
+    "(model_id,
+    group_id,
+    uniq_sa_id,
+    calendar_date,
     month_of_year,
     day_of_month,
     train_year,
@@ -38,7 +54,8 @@ reframe_usg_sql <- function(terr_cd, usg_yr = 2017, tou = "hetoua", usg_id = "D"
   )
 
   join_head <- c(
-    "(SELECT cust.model_id, cust.group_id,
+    "(SELECT cust.model_id,
+    cust.group_id,
     cust.uniq_sa_id,
     cust.deriv_baseline_terr_cd,
     cust.opr_area_cd,
@@ -63,12 +80,13 @@ reframe_usg_sql <- function(terr_cd, usg_yr = 2017, tou = "hetoua", usg_id = "D"
   join_body <- c(
     "INNER JOIN `rda`.`rdatables`.`elec_intvl_usg_all` AS usg
     ON cust.uniq_sa_id = usg.uniq_sa_id
-
     INNER JOIN `rda`.`rdadata`.`time_shift_xref` AS xref
     ON usg.usg_dt = xref.calendar_date"
   )
 
-  where <- paste("where usg_id =",usg_id)
+  where <- paste(
+    "WHERE usg.ener_dir_cd = 'D'"
+    )
 
   tou_body <- c(
     "JOIN `rda`.`rdadata`.`tou_lookup_2017_hetoua` AS tou
@@ -77,12 +95,20 @@ reframe_usg_sql <- function(terr_cd, usg_yr = 2017, tou = "hetoua", usg_id = "D"
   )
 
   agg_body <- c(
-    "")
+    "LIMIT 10")
 
-  usg_tou_query <- list(create_head, part_body, part_str, agg_head, join_head, from_body,
-                        join_body, tou_body, where, agg_body)
+  create_tail <- ");"
+
+  view_head <- paste(
+    paste0("DROP VIEW IF EXISTS `rda`.`rdatables`.",obj_in),
+    paste0("CREATE VIEW `rda`.`rdatables`.",obj_in), sep = ';\n')
+  view_body <- paste0("AS(SELECT * FROM `rda`.`rdadata`.",obj_in, create_tail)
+
+  usg_tou_query <- list(create_head, part_body, part_str, agg_head, join_head
+                          , from_body, join_body, tou_body, where, agg_body,
+                          create_tail, view_head, view_body)
+
   readr::write_lines(usg_tou_query, path  = out_path, append = FALSE)
-  print("check output dir...")
 }
 
-reframe_usg_sql("x")
+reframe_usg_sql(terr_cd)
